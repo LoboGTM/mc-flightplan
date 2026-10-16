@@ -128,7 +128,7 @@ section{margin-top:52px}
   </header>
 
   <section>
-    <div class="sec-head"><h2>Mission timeline</h2><span class="k">Sept 1 → Nov 29 · tap any bar for detail</span></div>
+    <div class="sec-head"><h2>Five projects</h2><span class="k">Sept 1 → Nov 29 · tap any bar for detail</span></div>
     <div class="timeline-box" id="timeline"></div>
     <div class="legend">
       <span><i style="background:var(--ok)"></i>SHIPPED</span>
@@ -156,42 +156,43 @@ section{margin-top:52px}
 <script>
 const START = new Date("2026-09-01T00:00:00");
 const END = new Date("2026-11-29T00:00:00");
-const TODAY = new Date("2026-10-01T00:00:00");
+const TODAY = new Date("2026-10-15T00:00:00");
 const SPAN = END - START;
 const pct = d => Math.min(100, Math.max(0, ((new Date(d + "T00:00:00") - START) / SPAN) * 100));
 
 const DATA = {
-  updated: "Oct 8",
-  day: 31,
+  updated: "Oct 15",
+  day: 45,
   phases: [
-    {name: "Phase 1 · Foundation", items: [
-      {id:"ns", n:"North Star & three-year picture", s:"need", a:"2026-09-10", b:"2026-10-09", due:"At monthly sync",
-       note:"The strategy session with Jason and Irit: the three-year picture, agreed ICP, and the top goals everything else aims at. It lands the moment the monthly sync is on the calendar.",
-       need:"2–3 time options from Jason and Irit for the monthly sync.", steps:[{t:"Discovery sessions with Jason and Ori complete",d:1},{t:"Monthly sync on the calendar",d:0},{t:"North Star summary delivered",d:0}]},
-      {id:"kpi", n:"Baseline KPI scoreboard", s:"build", a:"2026-09-15", b:"2026-10-10", due:"Early Oct",
-       note:"The honest starting line: event costs, funnel and channel numbers in one scoreboard. Data is assembled; final figures land as the HubSpot migration completes so the baseline is measured, not guessed.", steps:[{t:"Event cost and funnel data assembled",d:1},{t:"HubSpot migration data lands",d:0},{t:"Scoreboard delivered",d:0}]},
-      {id:"comp", n:"Sales compensation plan", s:"build", a:"2026-09-20", b:"2026-10-20", due:"Oct",
-       note:"Market benchmarks are drafted and shared with Ori. The plan finalizes with the pricing and packaging workshop so comp is modeled against real margins, not list prices.", steps:[{t:"Market comp benchmarks drafted and shared",d:1},{t:"Pricing and packaging workshop",d:0},{t:"Final comp plan delivered",d:0}]}
+    {name: "Five projects · finish line Nov 29", items: [
+      {id:"hub", n:"1 · HubSpot go-live", s:"build", a:"2026-10-15", b:"2026-10-30", due:"Oct 30",
+       note:"Everything before the sale runs in HubSpot and runs correctly: authenticated email, the new deal pipeline, live workflows, one set of forms, and a clean marketing contact count before the Nov 1 billing update.",
+       need:"Mauricio to verify missioncontrolnoc.com (SPF/DKIM) inside HubSpot. Until then, sends go out from the email. subdomain only.",
+       steps:[{t:"Full portal audit delivered",d:1,u:"https://docs.google.com/document/d/187hjtmdeXhBHxAKugO_6052e7-i6R4ctlPJC_vZ3V90/edit"},{t:"Stage definitions + mapping v2 delivered",d:1},{t:"Refreshed go-live report",d:0},{t:"Root domain authenticated, test emails pass",d:0},{t:"Deal pipeline built, 40 migrated deals mapped",d:0},{t:"Workflows published and tested",d:0},{t:"Old forms retired, one capture path",d:0},{t:"Marketing contacts cleaned up before Nov 1",d:0},{t:"Admin access and asset ownership consolidated",d:0},{t:"Baseline KPI scoreboard live",d:0}]},
+      {id:"price", n:"2 · Pricing & packaging", s:"need", a:"2026-10-14", b:"2026-10-30", due:"Oct 30",
+       note:"Packages a new rep can explain in one breath. The decision kit was previewed Oct 14; the working session on Oct 21 locks the six decisions, and the price sheet, comp plan and North Star summary all build from them.",
+       need:"Jason, Irit and Ori at the Wed Oct 21 session, 9am CT.",
+       steps:[{t:"Pricing decision kit built and previewed",d:1},{t:"Market comp benchmarks drafted",d:1},{t:"Oct 21 session: six decisions logged",d:0},{t:"Price sheet v1 approved",d:0},{t:"Comp plan finalized against new pricing",d:0},{t:"North Star summary confirmed",d:0}]},
+      {id:"camp", n:"3 · Q4 campaign engine", s:"build", a:"2026-10-15", b:"2026-11-06", due:"Nov 6 launch",
+       note:"One message system, one calendar, one campaign a month. November is help desk growth, December is holiday coverage. Every email, post and sequence builds from the PAS sheet so marketing and sales say the same thing.",
+       need:"Notes on the PAS sheet and partner program from Irit and Ori, plus Jason's answers through the PAS-O-Tron file.",
+       steps:[{t:"PAS Positioning Sheet v1 delivered",d:1,u:"https://docs.google.com/document/d/1PVA_QWcwgYkWTOCycznKJhlU4GRGToUysnfgqUqfev4/edit"},{t:"Product PAS sheets delivered",d:1},{t:"PAS-O-Tron file for Jason's Claude",d:0},{t:"Team markup folded into v1.1",d:0},{t:"Sequences rewritten from PAS",d:0},{t:"Shared Q4 marketing calendar",d:0},{t:"November campaign live",d:0},{t:"December campaign built",d:0}]},
+      {id:"buddy", n:"4 · Sales enablement", s:"build", a:"2026-10-14", b:"2026-11-13", due:"Nov 13",
+       note:"Any rep qualifies a prospect in under two minutes. The Mission Control Sales Buddy sits on top of HubSpot, which stays the source of truth, and its qualifier and calculator update the moment new pricing lands.",
+       steps:[{t:"Sales Buddy previewed with leadership",d:1},{t:"Access: Jason as manager, exec views for Irit and Ori",d:0},{t:"Connected to HubSpot",d:0},{t:"Qualifier + calculator tuned to new pricing",d:0},{t:"Talk tracks + Call 1 script",d:0}]},
+      {id:"hire", n:"5 · Marketing hire & handoff", s:"sched", a:"2026-10-20", b:"2026-11-29", due:"Nov 29",
+       note:"A dedicated marketing owner inside Mission Control, and a system they can pick up on day one: the plan through March, the calendar, and a runbook for every recurring task.",
+       steps:[{t:"Role profile + job post",d:0},{t:"Post live early November",d:0},{t:"Shortlist interviewed",d:0},{t:"6-month growth plan through March",d:0},{t:"Handoff runbook",d:0}]}
     ]},
-    {name: "Phase 2 · Build", items: [
-      {id:"pas", n:"PAS positioning playbook & talk tracks", s:"review", a:"2026-09-12", b:"2026-10-15", due:"Oct 15",
-       note:"The master messaging system. PAS Sheet v1 shipped Sept 18 and is in markup with Ori and Jeremy now; the sales talk tracks and Call 1 script build from the agreed version.", steps:[{t:"PAS Sheet v1 delivered",d:1,u:"https://docs.google.com/document/d/1PVA_QWcwgYkWTOCycznKJhlU4GRGToUysnfgqUqfev4/edit"},{t:"Sales documents review delivered (5 findings)",d:1},{t:"Team markup folded into v1.1",d:0},{t:"Talk tracks + Call 1 script",d:0}]},
-      {id:"hub", n:"HubSpot pipeline & sequence design", s:"build", a:"2026-09-20", b:"2026-10-30", due:"Oct 30",
-       note:"Full portal audit delivered Sept 23. New stages are built with Jeremy; implementation dates lock at the Oct 2 working session.", steps:[{t:"Full portal audit delivered",d:1,u:"https://docs.google.com/document/d/187hjtmdeXhBHxAKugO_6052e7-i6R4ctlPJC_vZ3V90/edit"},{t:"Lead stages designed with Jeremy",d:1},{t:"Implementation dates locked",d:0},{t:"Scoring and sequences live",d:0}]},
-      {id:"anv", n:"Anniversary campaign", s:"build", a:"2026-09-23", b:"2026-10-06", due:"Draft this week",
-       note:"Ten years of Mission Control, built as the opening arc of the Q4 marketing plan. Draft lands for review next week.", steps:[{t:"Campaign direction agreed with the team",d:1},{t:"Partner program first cut delivered",d:1,u:"https://docs.google.com/document/d/1iGhK8QgPqPgrfMLiM3fZGy0Weapw280vwibqGewmWso/edit"},{t:"Draft inside the Q4 plan",d:0}]},
-      {id:"team", n:"Team assessment & hiring plan", s:"build", a:"2026-10-01", b:"2026-10-15", due:"Oct 15",
-       note:"Role profiles, the training path, and the triggers for the next sales hire. Inputs are gathered; writing is underway.", steps:[{t:"Team input and candidate detail gathered",d:1},{t:"Hiring profiles + plan delivered",d:0}]}
-    ]},
-    {name: "Phase 3 · Launch", items: [
-      {id:"pbk", n:"Playbook AI go-to-market plan", s:"sched", a:"2026-10-15", b:"2026-11-14", due:"Nov 14",
-       note:"Product demos are complete and the positioning is agreed: service coordination, not just triage. The build starts once the demo sandbox tenant is ready.",
-       need:"Demo sandbox tenant and the product promo sheets from Jason.", steps:[{t:"Product demos complete",d:1},{t:"Positioning agreed",d:1},{t:"Sandbox access",d:0},{t:"Go-to-market plan delivered",d:0}]},
-      {id:"edu", n:"Client education & 12-month roadmap", s:"sched", a:"2026-11-01", b:"2026-11-29", due:"Nov 29",
-       note:"The closing deliverable: the repositioning campaign for existing Partners plus the year-ahead growth roadmap.", steps:[{t:"Scheduled for November",d:0}]}
+    {name: "Also in the SOW", items: [
+      {id:"pbk", n:"Playbook AI go-to-market plan", s:"sched", a:"2026-10-26", b:"2026-11-20", due:"Nov 20",
+       note:"Positioning is agreed and the product PAS sheet is drafted. The plan builds once there is hands-on access to the product.",
+       need:"Playbook AI and Liftoff access from Ardit when he's back.",
+       steps:[{t:"Product demos complete",d:1},{t:"Product PAS sheet drafted",d:1},{t:"Hands-on access",d:0},{t:"Go-to-market plan delivered",d:0}]}
     ]}
   ],
   shipped: [
+    {d:"Oct 14", t:"Strategy session + pricing kit preview", s:"Direction set for Q4, Sales Buddy and the pricing decision kit walked live."},
     {d:"Oct 2", t:"HubSpot stage definitions + mapping v2", s:"The full deal-pipeline spec: stages, lifecycle rules, and the record-by-record migration map."},
     {d:"Oct 1", t:"Product PAS sheets v1 (Playbook AI + LaunchPAD)", s:"Both products get their own positioning sheet; in review before team rollout."},
     {d:"Sept 25", t:"GTM Master Build Plan", s:"Decision gates, phases, owners, and what ships when.", u:"https://docs.google.com/document/d/12rJseO4IQzWlk2Vgr0LWIf_pKQqdeMQwlVCr6b8LyyY/edit"},
@@ -202,18 +203,17 @@ const DATA = {
     {d:"Sept 18", t:"Sales documents review", s:"Five findings across scripts, deck, and process, with a fix order."}
   ],
   asks: [
-    {who:"Ardit", what:"Liftoff + Playbook AI access for Rafael", why:"Before his vacation — unlocks product research, UI/UX input, and the sales buddy build."},
-    {who:"Jeremy", what:"Deal pipeline build date + marketing-contact check", why:"The 40 migrated deals need the new stages before anyone works them."},
-    {who:"Jason", what:"Org chart", why:"So the whole team map is clear as syncs kick off."},
-    {who:"Jesse", what:"GA4 / Google Ads reports + his 3–4 month plan", why:"Feeds the Q4 marketing plan with real conversion data."}
+    {who:"Jason", what:"Mauricio to verify missioncontrolnoc.com in HubSpot", why:"Fixes the phishing flag on outbound email. Blocks every campaign send."},
+    {who:"Irit + Ori", what:"Notes on the PAS sheet and partner program", why:"Before the Oct 21 session, so v1.1 reflects how you actually sell."},
+    {who:"Jason", what:"20 minutes with the PAS-O-Tron file in your Claude", why:"Your answers become the copy for pages, sequences and sales material."},
+    {who:"Ardit", what:"Playbook AI + Liftoff access when you're back", why:"Unlocks the Playbook go-to-market plan."},
+    {who:"Jesse", what:"GA4 / Google Ads reports", why:"Sets the baseline the November campaign is measured against."}
   ],
   next: [
-    {t:"Q4 quarterly marketing plan", s:"Campaigns, calendar, monthly templates, and the anniversary arc, for your review.", w:"THIS WEEK"},
-    {t:"Pricing workshop kit", s:"Decision tool and package options so the pricing session ends with answers, not homework.", w:"IN PREP"},
-    {t:"Monthly campaign templates", s:"Built with Jeremy so every campaign runs off one machine.", w:"OCT"},
-    {t:"Mission Control Sales Buddy", s:"Qualification and talk-track tool for the sales team. Demo at the sync.", w:"IN DEV"},
-    {t:"Product positioning sheets", s:"PAS sheets for Playbook AI and LaunchPAD, for Jeremy and Jason review.", w:"OCT"},
-    {t:"Comp plan framework + sales docs refresh", s:"Comp structure draft and updated findings, both linked here when they land.", w:"THIS WEEK"}
+    {t:"PAS-O-Tron file for Jason's Claude", s:"Drop it in, and your Claude interviews you one question at a time.", w:"FRI OCT 16"},
+    {t:"Sales Buddy access", s:"Invites for Jason, Irit and Ori.", w:"THIS WEEKEND"},
+    {t:"HubSpot go-live report", s:"Where the portal stands today and the order we fix it in.", w:"MON OCT 19"},
+    {t:"Pricing working session", s:"Six decisions, one hour, leave with answers.", w:"WED OCT 21"}
   ]
 };
 
@@ -303,8 +303,9 @@ document.getElementById("catchupBtn").addEventListener("click", () => {
     <div class="eyebrow">Flight briefing · ${esc(DATA.updated)}</div>
     <h3>Where things stand</h3>
     <p class="sum-line">Day <b>${DATA.day} of 90</b> and on track. <b>${DATA.shipped.length} deliverables</b> are shipped and in your hands, <b>${(counts.build||0)}</b> deliverables are in active build, <b>${counts.review||0}</b> is in review with your team, and <b>${counts.sched||0}</b> are scheduled for later phases. Across the full SOW checklist, <b>${allItems.reduce((n,i)=>n+(i.steps?i.steps.filter(s=>s.d).length:0),0)} steps are checked off</b> of ${allItems.reduce((n,i)=>n+(i.steps?i.steps.length:0),0)}.</p>
-    <p class="sum-line">This week: the TeamLogic Summit kit ships before the Oct 6–7 event, and the Q4 quarterly marketing plan lands for your review the week of Oct 6.</p>
-    <p class="sum-line">The single fastest way to speed everything up: <b>send 2–3 times for the monthly sync with you and Irit</b>. That one meeting unlocks three deliverables at once.</p>
+    <p class="sum-line">The rest of the engagement now runs as <b>five projects with finish lines</b>, all landing by Nov 29: HubSpot go-live, pricing and packaging, the Q4 campaign engine, sales enablement, and the marketing hire and handoff.</p>
+    <p class="sum-line">This week: the PAS-O-Tron file for Jason's Claude on Friday, Sales Buddy access this weekend, and the HubSpot go-live report Monday.</p>
+    <p class="sum-line">The single fastest way to speed everything up: <b>get missioncontrolnoc.com verified in HubSpot</b>. Every campaign send waits on it.</p>
     <ul class="log">${DATA.shipped.slice(0,3).map(u => `<li><span class="d">${esc(u.d)}</span><span class="t"><b>${esc(u.t)}</b><small>${esc(u.s)}</small></span></li>`).join("")}</ul>`);
 });
 </script>
