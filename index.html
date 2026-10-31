@@ -180,13 +180,13 @@ const DATA = {
       {id:"team", n:"4 · Sales team assessment and hiring profile", s:"build", a:"2026-09-15", b:"2026-11-13", due:"Was Oct 16 · now Nov 13",
        note:"Where the current sales process and team stand, and the profile and plan for the next hires: a sales rep and a marketing coordinator who can grow into leadership.",
        steps:[{t:"Sales documents review (five findings)",d:1},{t:"Conversation with Daniel (week of Nov 2)",d:0},{t:"Assessment written up",d:0},{t:"Hiring profiles and plan",d:0}]},
-      {id:"pas", n:"5 · PAS playbook and talk tracks", s:"build", a:"2026-09-10", b:"2026-11-13", due:"Was Oct 16 · now Nov 13",
-       note:"One message system for marketing and sales. The positioning sheets and Mission Buddy are in your hands. Left: the team's edits folded in, the talk tracks and Call 1 script, and Sales Buddy in the reps' hands.",
-       steps:[{t:"PAS Positioning Sheet v1",d:1,u:"https://docs.google.com/document/d/1PVA_QWcwgYkWTOCycznKJhlU4GRGToUysnfgqUqfev4/edit"},{t:"Product PAS sheets (Playbook AI, LaunchPAD)",d:1},{t:"Mission Buddy for your Claude",d:1},{t:"Team edits folded into v1.1",d:0},{t:"Sales Starter Kit: talk tracks, Call 1 script, objection cards, qualification checklist, call scorecard",d:0},{t:"Sales Buddy access and SOP",d:0},{t:"Recorded training session (week of Nov 16)",d:0}]},
+      {id:"pas", n:"5 · PAS playbook and talk tracks", s:"build", a:"2026-09-10", b:"2026-11-13", due:"Was Oct 16 · now Nov 13 (training wk of Nov 16)",
+       note:"One message system for marketing and sales. The positioning sheets and Mission Buddy are in your hands. Proposed for Nov 13: the team's edits folded in, the Sales Starter Kit, and Sales Buddy access with a one-page SOP. Proposed for the week of Nov 16: the recorded training session.",
+       steps:[{t:"PAS Positioning Sheet v1",d:1,u:"https://docs.google.com/document/d/1PVA_QWcwgYkWTOCycznKJhlU4GRGToUysnfgqUqfev4/edit"},{t:"Product PAS sheets (Playbook AI, LaunchPAD)",d:1},{t:"Mission Buddy for your Claude",d:1},{t:"Team edits folded into v1.1",d:0},{t:"Sales Starter Kit: talk tracks, Call 1 script, objection cards, qualification checklist, call scorecard (Nov 13)",d:0},{t:"Sales Buddy access and SOP (Nov 13)",d:0},{t:"Recorded training session (week of Nov 16)",d:0}]},
       {id:"hub", n:"6 · HubSpot pipeline, scoring and sequences", s:"build", a:"2026-09-20", b:"2026-11-20", due:"Was Oct 31 · now Nov 20",
        note:"The design for how HubSpot runs sales and marketing. The audit and the pipeline stage design are delivered, and Jason has rebuilt the portal. Left: lead scoring and sequence design matched to the new setup, plus a short implementation plan.",
        need:"Jason's go-ahead to review the rebuilt portal.",
-       steps:[{t:"Full portal audit",d:1,u:"https://docs.google.com/document/d/187hjtmdeXhBHxAKugO_6052e7-i6R4ctlPJC_vZ3V90/edit"},{t:"Stage definitions and mapping v2",d:1},{t:"Review of Jason's rebuilt HubSpot",d:0},{t:"Lead scoring model",d:0},{t:"Sequence design",d:0},{t:"Implementation plan",d:0},{t:"Sales Buddy connected to HubSpot, with Jason",d:0}]},
+       steps:[{t:"Full portal audit",d:1,u:"https://docs.google.com/document/d/187hjtmdeXhBHxAKugO_6052e7-i6R4ctlPJC_vZ3V90/edit"},{t:"Stage definitions and mapping v2",d:1},{t:"Review of Jason's rebuilt HubSpot",d:0},{t:"Lead scoring model",d:0},{t:"Sequence design",d:0},{t:"Implementation plan",d:0},{t:"Planned: Sales Buddy connected to HubSpot with Jason, after his go-ahead and testing",d:0}]},
       {id:"anniv", n:"7 · Anniversary campaign concept and plan", s:"ok", a:"2026-09-10", b:"2026-10-28", due:"Redirected · closed",
        note:"At Mission Control's request on Oct 22, the anniversary campaign was deferred and its planning and creative direction redirected to the help desk campaign. The campaign plan, copy, ads, comic and paid media strategy were delivered Oct 26 to 28. Mission Control decided on Oct 31 not to move forward with it. The files remain yours to use.",
        steps:[{t:"Redirected to the help desk campaign at MC's request",d:1},{t:"Campaign plan, copy and creative delivered",d:1},{t:"Paid media package delivered",d:1}]},
@@ -221,7 +221,7 @@ const DATA = {
     {t:"Conversation with Daniel", s:"Sales challenges in his words, with a short write-up for Ori.", w:"WEEK OF NOV 2"},
     {t:"Touch-base on the finish list", s:"Walk Ori, Jason and Irit through the status document.", w:"WEEK OF NOV 2"},
     {t:"North Star summary draft", s:"One page for Jason, Irit and Ori to confirm.", w:"FRI NOV 6"},
-    {t:"Sales Starter Kit and Sales Buddy", s:"Talk tracks, Call 1 script, objection cards, checklist and scorecard, plus Sales Buddy access.", w:"FRI NOV 13"}
+    {t:"Sales Starter Kit and Sales Buddy access", s:"Talk tracks, Call 1 script, objection cards, checklist and scorecard, plus Sales Buddy access and SOP. Recorded training follows the week of Nov 16.", w:"FRI NOV 13"}
   ]
 };
 
@@ -311,7 +311,7 @@ document.getElementById("catchupBtn").addEventListener("click", () => {
     <div class="eyebrow">Flight briefing · ${esc(DATA.updated)}</div>
     <h3>Where things stand</h3>
     <p class="sum-line">Day <b>${DATA.day} of 90</b>. The SOW minimum term runs through <b>Nov 30</b>, and this page tracks the nine SOW deliverables to that date. <b>${DATA.shipped.length} items</b> have shipped so far.</p>
-    <p class="sum-line">Several deliverables due in October slipped. Each one now shows its original date and a new finish date, and most of them are waiting on one input from Mission Control, listed under Waiting on Mission Control.</p>
+    <p class="sum-line">Several deliverables due in October slipped. Each one now shows its original date and a proposed finish date. Most of the remaining work is on Raf.</p>
     <p class="sum-line">The anniversary campaign was redirected to the help desk campaign at Mission Control's request. That plan and creative were delivered, and Mission Control decided not to move forward with it, so that deliverable is closed.</p>
     <p class="sum-line">Fastest way to finish on time: <b>Jason's go-ahead on the HubSpot review, Ardit's Lift Off access, and Jesse's GA4 and Ads reports</b>. Everything else is on Raf.</p>
     <p class="sum-line">Updates go out <b>every Monday</b> (this week's work and what's needed) and <b>every Friday</b> (what got done, with links). This page is updated the same days.</p>
