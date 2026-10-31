@@ -169,14 +169,14 @@ const DATA = {
        note:"The three-year picture, the agreed ICP and the final Top 5 goals, on one page everyone signs off on. The ICP direction is set: Partners in growth mode. What's left is writing it down and getting Jason, Irit and Ori to confirm it.",
        need:"30 minutes with Jason, Irit and Ori to confirm the draft.",
        steps:[{t:"ICP direction set: Partners in growth mode",d:1},{t:"Strategy session",d:1},{t:"Written summary drafted",d:0},{t:"Confirmed by Jason, Irit and Ori",d:0}]},
-      {id:"kpi", n:"2 · Baseline KPI scoreboard", s:"need", a:"2026-09-15", b:"2026-11-13", due:"Was Oct 1 · now Nov 13",
+      {id:"kpi", n:"2 · Baseline KPI scoreboard", s:"build", a:"2026-09-15", b:"2026-11-13", due:"Was Oct 1 · now Nov 13",
        note:"One page with the verified starting numbers every result gets measured against: leads, booked calls, closes, churn, and marketing spend and return.",
-       need:"Ori's baseline numbers (leads, closes and churn by month) and Jesse's GA4 and Google Ads reports.",
-       steps:[{t:"Metric list agreed",d:0},{t:"Baseline data received",d:0},{t:"Scoreboard built",d:0},{t:"Reviewed with Ori",d:0}]},
+       need:"Jesse's GA4 and Google Ads reports for the marketing lines.",
+       steps:[{t:"Financials workbook received from Ori (Sept 4)",d:1},{t:"Metric list agreed",d:0},{t:"Scoreboard built from the workbook and HubSpot",d:0},{t:"Reviewed with Ori",d:0}]},
       {id:"comp", n:"3 · Sales comp plan", s:"need", a:"2026-09-15", b:"2026-11-20", due:"Was Oct 1 · now Nov 20",
        note:"A rep compensation plan modeled against margins, built on the final pricing so the numbers hold up.",
-       need:"Final pricing from Ori. The comp plan follows within a week.",
-       steps:[{t:"Pricing decision kit delivered",d:1},{t:"Market comp benchmarks drafted",d:1},{t:"Final pricing from Mission Control",d:0},{t:"Comp plan modeled against margins",d:0},{t:"Reviewed and approved",d:0}]},
+       need:"Your decision on the proposed packages Raf sends Wed Nov 4. The comp plan follows.",
+       steps:[{t:"Pricing decision kit delivered",d:1},{t:"Market comp benchmarks drafted",d:1},{t:"Proposed packages sent to MC (Nov 4)",d:0},{t:"Packages approved",d:0},{t:"Comp plan modeled against margins",d:0},{t:"Reviewed and approved",d:0}]},
       {id:"team", n:"4 · Sales team assessment and hiring profile", s:"need", a:"2026-09-15", b:"2026-11-13", due:"Was Oct 16 · now Nov 13",
        note:"Where the current sales process and team stand, and the profile and plan for the next hires: a sales rep and a marketing coordinator who can grow into leadership.",
        need:"A conversation with Daniel about what he runs into on calls.",
@@ -214,8 +214,7 @@ const DATA = {
     {d:"Sept 18", t:"Sales documents review", s:"Five findings across scripts, deck, and process, with a fix order."}
   ],
   asks: [
-    {who:"Ori", what:"Final pricing", why:"Unlocks the comp plan and the Sales Buddy pricing calculator."},
-    {who:"Ori", what:"Baseline numbers: leads, closes and churn by month", why:"The starting line for the KPI scoreboard."},
+    {who:"Ori, Jason, Irit", what:"Decision on the proposed packages (sent Wed Nov 4)", why:"Unlocks the comp plan and the Sales Buddy pricing calculator."},
     {who:"Daniel", what:"45 minutes on what he runs into on calls", why:"Feeds the sales assessment, talk tracks and Sales Buddy."},
     {who:"Jason", what:"Write-up of the new HubSpot structure", why:"Scoring and sequences get designed to match it."},
     {who:"Ardit", what:"Lift Off and LaunchPAD access", why:"Unlocks the Lift Off go-to-market plan."},
@@ -224,6 +223,7 @@ const DATA = {
   next: [
     {t:"Touch-base on the finish list", s:"Confirm the remaining SOW items and dates with Ori.", w:"WEEK OF NOV 2"},
     {t:"Conversation with Daniel", s:"Sales challenges, in his words.", w:"WEEK OF NOV 2"},
+    {t:"Proposed packages", s:"Simplified packages for your approval, built from the Sept 4 rate card.", w:"WED NOV 4"},
     {t:"North Star summary draft", s:"One page for Jason, Irit and Ori to confirm.", w:"FRI NOV 6"},
     {t:"Talk tracks, Call 1 script and Sales Buddy", s:"In the reps' hands, with training and an SOP.", w:"FRI NOV 13"}
   ]
@@ -317,7 +317,8 @@ document.getElementById("catchupBtn").addEventListener("click", () => {
     <p class="sum-line">Day <b>${DATA.day} of 90</b>. The SOW minimum term runs through <b>Nov 30</b>, and this page tracks the nine SOW deliverables to that date. <b>${DATA.shipped.length} items</b> have shipped so far.</p>
     <p class="sum-line">Several deliverables due in October slipped. Each one now shows its original date and a new finish date, and most of them are waiting on one input from Mission Control, listed under Waiting on Mission Control.</p>
     <p class="sum-line">The anniversary campaign was redirected to the help desk campaign at Mission Control's request. That plan and creative were delivered, and Mission Control decided not to move forward with it, so that deliverable is closed.</p>
-    <p class="sum-line">Fastest way to finish on time: <b>final pricing from Ori, a conversation with Daniel, and Ardit's Lift Off access</b>.</p>
+    <p class="sum-line">Fastest way to finish on time: <b>a decision on the proposed packages, a conversation with Daniel, and Ardit's Lift Off access</b>. Most of what's left is on Raf.</p>
+    <p class="sum-line">Updates go out <b>every Monday</b> (this week's work and what's needed) and <b>every Friday</b> (what got done, with links). This page is updated the same days.</p>
     <ul class="log">${DATA.shipped.slice(0,3).map(u => `<li><span class="d">${esc(u.d)}</span><span class="t"><b>${esc(u.t)}</b><small>${esc(u.s)}</small></span></li>`).join("")}</ul>`);
 });
 </script>
