@@ -399,27 +399,28 @@ const DATA = {
         },
         {
           "id": "anniv",
-          "n": "7 · Anniversary campaign concept and plan",
+          "n": "7 · KHDaaS helpdesk campaign (replaces anniversary)",
           "s": "review",
           "a": "2026-09-10",
           "b": "2026-10-28",
-          "due": "Original Sept 26 · replacement review open",
-          "note": "The redirected campaign package was delivered October 27 and remains held from execution. Acceptance of the replacement against the original anniversary output has not been confirmed. Delivery, review and execution are separate.",
+          "due": "Delivered Oct 27 · review open",
+          "note": "The original anniversary campaign was replaced by the KHDaaS helpdesk campaign. The Still Here campaign plan was delivered October 27 and remains held from execution. Final review and acceptance have not been recorded.",
           "steps": [
             {
-              "t": "Replacement package delivered",
+              "t": "Helpdesk campaign plan delivered",
               "d": 1
             },
             {
-              "t": "Replacement acceptance confirmed",
+              "t": "Final review and acceptance recorded",
               "d": 0
             }
           ],
-          "need": "Record any specific requested plan changes and final review status; do not restart execution without a new decision.",
+          "need": "Record any specific plan changes and final review status; do not restart execution without a new decision.",
           "docs": [
             {
-              "t": "Delivered campaign overview and creative package",
-              "state": "Delivered · document link awaiting access review"
+              "t": "KHDaaS helpdesk campaign · Still Here",
+              "u": "https://mc-khdaas-eol-campaign.netlify.app/",
+              "state": "Delivered replacement · historical October 27 plan · execution held"
             }
           ]
         },
@@ -569,7 +570,7 @@ const DATA = {
   "next": [
     {
       "t": "Review the mapped working documents",
-      "s": "Current review drafts are linked to the corresponding SOW items. Approved reviewer sign-in is required; the delivered campaign remains held and its historical link is still under access review.",
+      "s": "Current review drafts are linked to the corresponding SOW items. Approved reviewer sign-in is required; the delivered replacement campaign remains held and links to its original plan.",
       "w": "DOCUMENT MAP"
     },
     {
@@ -676,7 +677,7 @@ document.getElementById("catchupBtn").addEventListener("click", () => {
     <h3>Where things stand</h3>
     <p class="sum-line">Current drafts are linked for MC review. <b>Review access, final delivery and acceptance are separate steps.</b></p>
     <p class="sum-line">Previously delivered PAS, Mission Buddy, HubSpot and campaign components remain credited. Those supporting items are not a count of completed SOW deliverables.</p>
-    <p class="sum-line">The redirected campaign package was delivered. Acceptance of the replacement against the original anniversary item is still unconfirmed.</p>
+    <p class="sum-line">The KHDaaS helpdesk campaign replaced the anniversary campaign and was delivered. Final acceptance remains unconfirmed; execution is held.</p>
     <p class="sum-line">MC review now focuses on the recommendations and specific source, system and product dependencies. Existing revised dates remain proposed.</p>
     <p class="sum-line">Sales Buddy delivery readiness, access, SOP and training remain open as a separate rollout. The board links to restricted review copies without publishing their contents.</p>
     <ul class="log">${DATA.shipped.slice(0,3).map(u => `<li><span class="d">${esc(u.d)}</span><span class="t"><b>${esc(u.t)}</b><small>${esc(u.s)}</small></span></li>`).join("")}</ul>`);
