@@ -114,6 +114,9 @@ section{margin-top:52px}
   .axis .spacer{display:none}
   .logo{height:32px}
 }
+
+/* SOW document directory: metadata and approved existing links only. */
+.doc-map{display:grid;gap:10px}.doc-row{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:grid;grid-template-columns:235px minmax(0,1fr);gap:16px}.doc-row h3{font-size:13.5px;line-height:1.35;margin:0}.doc-list{list-style:none;padding:0;margin:0}.doc-list li{padding:5px 0;font-size:13px;line-height:1.4}.doc-list li:first-child{padding-top:0}.doc-list small{display:block;color:var(--muted);font-size:11.5px;margin-top:2px}.doc-list a{font-weight:600}.doc-intro{color:var(--muted);font-size:13px;margin:0 0 14px}.doc-intro a{font-weight:600}.modal .doc-list{margin:8px 0 12px}@media(max-width:620px){.doc-row{grid-template-columns:1fr;gap:8px}}
 </style>
 
 <div class="wrap">
@@ -137,6 +140,13 @@ section{margin-top:52px}
       <span><i style="background:var(--need)"></i>NEEDS MC</span>
       <span><i style="background:var(--sched);opacity:.55"></i>SCHEDULED</span>
     </div>
+  </section>
+
+
+  <section id="documents">
+    <div class="sec-head"><h2>Where the documents are</h2><span class="k">Mapped to the nine SOW outputs</span></div>
+    <p class="doc-intro">The <a href="https://docs.google.com/document/d/12rJseO4IQzWlk2Vgr0LWIf_pKQqdeMQwlVCr6b8LyyY/edit" target="_blank" rel="noopener">Master Build Plan</a> is the overall scope and status reference. It is not a substitute for the individual deliverables below. Existing document links require authorized team sign-in. Private working drafts are listed by title until approved team links are available.</p>
+    <div id="documentMap" class="doc-map"></div>
   </section>
 
   <section>
@@ -189,6 +199,12 @@ const DATA = {
               "t": "Leadership confirmation recorded",
               "d": 0
             }
+          ],
+          "docs": [
+            {
+              "t": "North Star review",
+              "state": "Private working draft · team link pending"
+            }
           ]
         },
         {
@@ -198,11 +214,11 @@ const DATA = {
           "a": "2026-09-15",
           "b": "2026-11-13",
           "due": "SOW Day 30 · proposed Nov 13",
-          "note": "The KPI scoreboard working draft is prepared. A dated baseline can support goal design; baseline verification and MC review remain open. Ongoing reporting updates are tracked separately.",
-          "need": "Raf to verify the dated baseline and document gaps; MC to confirm the KPIs and review cadence.",
+          "note": "A HubSpot dashboard blueprint is prepared. The source workbook is internal support. Dated baseline verification and MC review remain open; a live dashboard or working integration is not claimed.",
+          "need": "Raf to complete chosen-period baseline checks with the source owners; MC to review the recommended measures and targets.",
           "steps": [
             {
-              "t": "Scoreboard working draft prepared",
+              "t": "Dashboard blueprint and source reference prepared",
               "d": 1
             },
             {
@@ -213,6 +229,16 @@ const DATA = {
               "t": "Shared scoreboard handoff",
               "d": 0
             }
+          ],
+          "docs": [
+            {
+              "t": "HubSpot Dashboard Blueprint",
+              "state": "Private working draft · team link pending"
+            },
+            {
+              "t": "KPI source workbook",
+              "state": "Internal calculation support · not the client-facing dashboard"
+            }
           ]
         },
         {
@@ -222,7 +248,7 @@ const DATA = {
           "a": "2026-09-15",
           "b": "2026-11-20",
           "due": "SOW Day 30 · proposed Nov 20",
-          "note": "The compensation plan and calculator are drafted. Validation, leadership decisions and final handoff remain open.",
+          "note": "The compensation plan and calculator are drafted, and Rafael’s planning direction is captured. Actual-results validation, MC decisions and final handoff remain open.",
           "steps": [
             {
               "t": "Plan and calculator drafts prepared",
@@ -237,7 +263,17 @@ const DATA = {
               "d": 0
             }
           ],
-          "need": "Raf to finish validation; MC leadership to review and decide the terms."
+          "need": "Raf to finish validation; MC leadership to review and decide the terms.",
+          "docs": [
+            {
+              "t": "Phased Hiring and Compensation Plan",
+              "state": "Private working draft · team link pending"
+            },
+            {
+              "t": "Two Role Compensation Calculator",
+              "state": "Private working draft · team link pending"
+            }
+          ]
         },
         {
           "id": "team",
@@ -261,7 +297,13 @@ const DATA = {
               "d": 0
             }
           ],
-          "need": "Raf to finalize the assessment; MC leadership to review the hiring plan."
+          "need": "Raf to finalize the assessment; MC leadership to review the hiring plan.",
+          "docs": [
+            {
+              "t": "Sales Assessment and Hiring Plan",
+              "state": "Private working draft · team link pending"
+            }
+          ]
         },
         {
           "id": "pas",
@@ -285,7 +327,26 @@ const DATA = {
               "d": 0
             }
           ],
-          "need": "Raf to finalize the package; MC to review and confirm access and use."
+          "need": "Raf to finalize the package; MC to review and confirm access and use.",
+          "docs": [
+            {
+              "t": "GTM Operating Playbook",
+              "state": "Private working draft · team link pending"
+            },
+            {
+              "t": "Claude Companion",
+              "state": "Private working draft · team link pending"
+            },
+            {
+              "t": "Sales Starter Kit",
+              "state": "Private working draft · team link pending"
+            },
+            {
+              "t": "Existing PAS foundation",
+              "u": "https://docs.google.com/document/d/1PVA_QWcwgYkWTOCycznKJhlU4GRGToUysnfgqUqfev4/edit",
+              "state": "Supporting reference · team sign-in required"
+            }
+          ]
         },
         {
           "id": "hub",
@@ -294,7 +355,7 @@ const DATA = {
           "a": "2026-09-20",
           "b": "2026-11-20",
           "due": "SOW Day 60 · proposed Nov 20",
-          "note": "The earlier HubSpot audit and design materials were delivered. The updated design and implementation-plan draft is prepared. Final alignment and review remain open; a completed migration or tested integration is not claimed.",
+          "note": "The earlier audit and design materials were delivered. The current design and implementation plan are drafted, and current operating ownership is recorded. Final alignment and review remain open; no completed integration is claimed.",
           "need": "Raf and Jason to align the final design and implementation plan with the current setup.",
           "steps": [
             {
@@ -309,6 +370,17 @@ const DATA = {
               "t": "Final alignment and client review",
               "d": 0
             }
+          ],
+          "docs": [
+            {
+              "t": "HubSpot Design and Implementation Plan",
+              "state": "Private working draft · team link pending"
+            },
+            {
+              "t": "Earlier HubSpot audit · September 23",
+              "u": "https://docs.google.com/document/d/187hjtmdeXhBHxAKugO_6052e7-i6R4ctlPJC_vZ3V90/edit",
+              "state": "Historical reference · not the latest design · team sign-in required"
+            }
           ]
         },
         {
@@ -318,7 +390,7 @@ const DATA = {
           "a": "2026-09-10",
           "b": "2026-10-28",
           "due": "Original Sept 26 · replacement review open",
-          "note": "The redirected campaign package was delivered. Acceptance of that replacement against the original anniversary deliverable has not been confirmed. Delivery and acceptance are tracked separately.",
+          "note": "The redirected campaign package was delivered October 27 and remains held from execution. Acceptance of the replacement against the original anniversary output has not been confirmed. Delivery, review and execution are separate.",
           "steps": [
             {
               "t": "Replacement package delivered",
@@ -329,7 +401,13 @@ const DATA = {
               "d": 0
             }
           ],
-          "need": "Raf and MC to confirm the status of the replacement and record the decision."
+          "need": "Record any specific requested plan changes and final review status; do not restart execution without a new decision.",
+          "docs": [
+            {
+              "t": "Delivered campaign overview and creative package",
+              "state": "Delivered · document link awaiting access review"
+            }
+          ]
         },
         {
           "id": "lo",
@@ -353,6 +431,12 @@ const DATA = {
               "t": "Final plan handoff",
               "d": 0
             }
+          ],
+          "docs": [
+            {
+              "t": "Lift Off Go To Market Plan",
+              "state": "Private working draft · team link pending"
+            }
           ]
         },
         {
@@ -362,14 +446,14 @@ const DATA = {
           "a": "2026-11-03",
           "b": "2026-11-30",
           "due": "SOW Day 90 · Nov 30",
-          "note": "The existing-client education plan and growth-roadmap working drafts are prepared. Review, ownership and final handoff remain open.",
+          "note": "The education plan and growth roadmap are drafted and aligned to current direction. Campaign operating ownership is recorded. Review and final handoff remain open; a future resource-library build is separate work.",
           "steps": [
             {
               "t": "Working drafts prepared",
               "d": 1
             },
             {
-              "t": "Priorities and ownership reviewed",
+              "t": "Current direction and remaining plan review",
               "d": 0
             },
             {
@@ -377,14 +461,20 @@ const DATA = {
               "d": 0
             }
           ],
-          "need": "Raf to finalize the package; MC to review priorities and ownership."
+          "need": "Raf to review and arrange final handoff; MC to review priorities and any factual corrections.",
+          "docs": [
+            {
+              "t": "Partner Education Plan and 12 Month Roadmap",
+              "state": "Private working draft · team link pending"
+            }
+          ]
         }
       ]
     }
   ],
   "shipped": [
     {
-      "d": "Oct 28",
+      "d": "Oct 27",
       "t": "Help desk campaign plan and creative",
       "s": "Plan, copy, ads in six sizes, comic and paid media strategy. Not moving forward; the files are yours."
     },
@@ -411,7 +501,7 @@ const DATA = {
     {
       "d": "Sept 25",
       "t": "GTM Master Build Plan",
-      "s": "Decision gates, phases, owners, and what ships when.",
+      "s": "Original plan updated November 5. Current scope, owners and status reference; team sign-in required.",
       "u": "https://docs.google.com/document/d/12rJseO4IQzWlk2Vgr0LWIf_pKQqdeMQwlVCr6b8LyyY/edit"
     },
     {
@@ -455,16 +545,16 @@ const DATA = {
       "why": "Confirm direction, priorities and any requested changes."
     },
     {
-      "who": "Raf + MC owners",
-      "what": "Resolve remaining source and system dependencies",
-      "why": "Complete baseline verification, final HubSpot alignment and product validation."
+      "who": "Raf + designated owners",
+      "what": "Complete targeted validation",
+      "why": "Chosen-period baseline checks, final HubSpot alignment and the product/offer mapping remain. Current operating owners are recorded."
     }
   ],
   "next": [
     {
-      "t": "Review the consolidated working package",
-      "s": "Draft preparation is recorded separately from delivery to MC and acceptance.",
-      "w": "IN REVIEW"
+      "t": "Review the mapped working documents",
+      "s": "Each SOW item now lists its actual working documents. Restricted links require team sign-in; private draft links remain pending approval.",
+      "w": "DOCUMENT MAP"
     },
     {
       "t": "Complete staged November handoffs",
@@ -522,6 +612,10 @@ if (firstTrack){
   firstTrack.appendChild(tag);
 }
 
+
+function renderDocs(docs){ return '<ul class="doc-list">' + (docs || []).map(d => '<li>' + (d.u ? '<a href="' + esc(d.u) + '" target="_blank" rel="noopener">' + esc(d.t) + ' ↗</a>' : '<span>' + esc(d.t) + '</span>') + '<small>' + esc(d.state) + '</small></li>').join('') + '</ul>'; }
+document.getElementById('documentMap').innerHTML = allItems.map(it => '<div class="doc-row"><h3>' + esc(it.n) + '</h3><div>' + renderDocs(it.docs) + '</div></div>').join('');
+
 /* support sections */
 document.getElementById("shipped").innerHTML = DATA.shipped.map(r =>
   `<li><span class="d">${esc(r.d)}</span><span class="t"><b>${r.u ? `<a href="${esc(r.u)}" target="_blank" rel="noopener">${esc(r.t)} ↗</a>` : esc(r.t)}</b><small>${esc(r.s)}</small></span></li>`).join("");
@@ -551,6 +645,7 @@ function openItem(id){
     <h3>${esc(it.n)}</h3>
     <div class="pills"><span class="pill st-${it.s}">${ST[it.s]}</span><span class="pill">DUE · ${esc(it.due.toUpperCase())}</span></div>
     <p>${esc(it.note)}</p>
+    ${it.docs ? `<div class="steps-k">Working documents and references</div>${renderDocs(it.docs)}` : ""}
     ${it.steps ? `<div class="steps-k">Checklist · ${it.steps.filter(s=>s.d).length} of ${it.steps.length} done</div><ul class="steps">${it.steps.map(s => `<li class="${s.d?"done":"todo"}"><span class="ck">${s.d?"✓":"○"}</span><span>${s.u?`<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(s.t)} ↗</a>`:esc(s.t)}</span></li>`).join("")}</ul>` : ""}
     ${it.need ? `<div class="needbox"><div class="k">To move faster, we need</div><div>${esc(it.need)}</div></div>` : ""}`);
 }
@@ -571,4 +666,5 @@ document.getElementById("catchupBtn").addEventListener("click", () => {
     <ul class="log">${DATA.shipped.slice(0,3).map(u => `<li><span class="d">${esc(u.d)}</span><span class="t"><b>${esc(u.t)}</b><small>${esc(u.s)}</small></span></li>`).join("")}</ul>`);
 });
 </script>
+
 
