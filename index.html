@@ -126,7 +126,7 @@ section{margin-top:52px}
       <button class="catchup-btn" id="catchupBtn">CATCH ME UP</button>
     </div>
     <h1>Mission Control Flight Plan</h1>
-    <p class="sub">Engagement status · <b>Lobo GTM × Mission Control</b> · live page, updated as work progresses</p><p class="sub" style="margin-top:10px">High-level status only. Drafts are not yet final client deliveries. Delivery does not imply acceptance. Revised dates remain proposed. Updated November 5, 2026 UTC.</p>
+    <p class="sub">Engagement status · <b>Lobo GTM × Mission Control</b> · live page, updated as work progresses</p><p class="sub" style="margin-top:10px">High-level status only. Current drafts are available for MC review through restricted links. Delivery does not imply acceptance. Revised dates remain proposed. Updated November 5, 2026 UTC.</p>
     <div class="telemetry" id="tiles"></div>
   </header>
 
@@ -145,7 +145,7 @@ section{margin-top:52px}
 
   <section id="documents">
     <div class="sec-head"><h2>Where the documents are</h2><span class="k">Mapped to the nine SOW outputs</span></div>
-    <p class="doc-intro">This board is the delivery and status index. The GTM Operating Playbook is the operating guide. The <a href="https://docs.google.com/document/d/12rJseO4IQzWlk2Vgr0LWIf_pKQqdeMQwlVCr6b8LyyY/edit" target="_blank" rel="noopener">Master Build Plan</a> is retained as an internal working reference, not another operating guide. Existing document links require authorized team sign-in. Private working drafts are listed by title until approved team links are available.</p>
+    <p class="doc-intro">This board is the delivery and status index. The GTM Operating Playbook is the operating guide. The <a href="https://docs.google.com/document/d/12rJseO4IQzWlk2Vgr0LWIf_pKQqdeMQwlVCr6b8LyyY/edit" target="_blank" rel="noopener">Master Build Plan</a> is retained as an internal working reference, not another operating guide. Current draft links require approved reviewer sign-in. <a href="https://drive.google.com/drive/folders/1N7Gy2jvAHY4qNMzKVyA9G8oZax9ipgi2" target="_blank" rel="noopener">Open the Draft for MC Review folder</a>. Existing references retain their prior restricted team access.</p>
     <div id="documentMap" class="doc-map"></div>
   </section>
 
@@ -184,8 +184,8 @@ const DATA = {
           "a": "2026-09-15",
           "b": "2026-11-13",
           "due": "SOW Day 30 · proposed Nov 13",
-          "note": "A North Star working draft is prepared. Final review, client handoff and leadership confirmation remain open.",
-          "need": "Raf to finalize the review draft; MC leadership to confirm direction.",
+          "note": "The North Star recommendations are ready for MC review. Leadership confirmation and final acceptance remain open.",
+          "need": "MC leadership to review the recommended direction and record decisions or factual corrections.",
           "steps": [
             {
               "t": "Working draft prepared",
@@ -203,7 +203,13 @@ const DATA = {
           "docs": [
             {
               "t": "North Star review",
-              "state": "Private working draft · team link pending"
+              "state": "Draft for MC review · restricted access",
+              "u": "https://docs.google.com/document/d/1JDdHcZ9TqkUUTqWSkgyX8Kt5NEVZFC1z/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
+            },
+            {
+              "t": "Guided MC review · downloadable HTML",
+              "u": "https://drive.google.com/file/d/11Z__ozXFJPWerANZU13bjyUqeHvBufDW/view?usp=drivesdk",
+              "state": "Draft for MC review · download and open in a browser"
             }
           ]
         },
@@ -214,8 +220,8 @@ const DATA = {
           "a": "2026-09-15",
           "b": "2026-11-13",
           "due": "SOW Day 30 · proposed Nov 13",
-          "note": "A HubSpot dashboard blueprint is prepared. The source workbook is internal support. Dated baseline verification and MC review remain open; a live dashboard or working integration is not claimed.",
-          "need": "Raf to complete chosen-period baseline checks with the source owners; MC to review the recommended measures and targets.",
+          "note": "The HubSpot dashboard blueprint is ready for MC review. The source workbook stays internal. Dated baseline approval and technical reporting checks remain open; no live dashboard or working integration is claimed.",
+          "need": "Review the recommended measures and dated targets. Source owners validate missing records while live reporting is checked separately.",
           "steps": [
             {
               "t": "Dashboard blueprint and source reference prepared",
@@ -233,7 +239,8 @@ const DATA = {
           "docs": [
             {
               "t": "HubSpot Dashboard Blueprint",
-              "state": "Private working draft · team link pending"
+              "state": "Draft for MC review · restricted access",
+              "u": "https://docs.google.com/document/d/1-2Qr8ZI_7w5FpiP_95ITJY9mHCP2psCS/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
             },
             {
               "t": "KPI source workbook",
@@ -248,7 +255,7 @@ const DATA = {
           "a": "2026-09-15",
           "b": "2026-11-20",
           "due": "SOW Day 30 · proposed Nov 20",
-          "note": "The compensation plan and calculator are drafted, and Rafael’s planning direction is captured. Actual-results validation, MC decisions and final handoff remain open.",
+          "note": "The compensation plan and calculator are ready for MC review. Actual-results calibration and formal adoption remain open.",
           "steps": [
             {
               "t": "Plan and calculator drafts prepared",
@@ -263,15 +270,17 @@ const DATA = {
               "d": 0
             }
           ],
-          "need": "Raf to finish validation; MC leadership to review and decide the terms.",
+          "need": "Review the proposed terms; validate existing records so quota and payout rates can be calibrated.",
           "docs": [
             {
               "t": "Phased Hiring and Compensation Plan",
-              "state": "Private working draft · team link pending"
+              "state": "Draft for MC review · restricted access",
+              "u": "https://docs.google.com/document/d/1mK3teOS_U7TXnUBnwTpThwsasj_CTn-r/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
             },
             {
               "t": "Two Role Compensation Calculator",
-              "state": "Private working draft · team link pending"
+              "state": "Draft for MC review · restricted access",
+              "u": "https://docs.google.com/spreadsheets/d/1oXaFzGe5tVll8S1xPpuE54Jo3hv3sRmJ/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
             }
           ]
         },
@@ -282,7 +291,7 @@ const DATA = {
           "a": "2026-09-15",
           "b": "2026-11-13",
           "due": "SOW Day 45 · proposed Nov 13",
-          "note": "The sales assessment and hiring-plan working draft is prepared. Final review and client handoff remain open.",
+          "note": "The assessment and hiring plan are ready for MC review. No new candidate assessment is assumed.",
           "steps": [
             {
               "t": "Assessment and hiring-plan draft prepared",
@@ -297,11 +306,12 @@ const DATA = {
               "d": 0
             }
           ],
-          "need": "Raf to finalize the assessment; MC leadership to review the hiring plan.",
+          "need": "Review the recommended hiring profile and plan; flag factual corrections.",
           "docs": [
             {
               "t": "Sales Assessment and Hiring Plan",
-              "state": "Private working draft · team link pending"
+              "state": "Draft for MC review · restricted access",
+              "u": "https://docs.google.com/document/d/1U-ttmX0aS8ehv0dpQ3l19jSHsGMwgXQa/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
             }
           ]
         },
@@ -312,7 +322,7 @@ const DATA = {
           "a": "2026-09-10",
           "b": "2026-11-13",
           "due": "SOW Day 45 · proposed Nov 13 (training wk of Nov 16)",
-          "note": "The PAS foundation and Mission Buddy materials were previously delivered. The consolidated playbook and Claude companion are drafted; final review, handoff and practical team use remain open.",
+          "note": "The PAS foundation and Mission Buddy materials were previously delivered. The current playbook, companion and Starter Kit are available as drafts for MC review; practical use and acceptance remain separate.",
           "steps": [
             {
               "t": "PAS and Mission Buddy materials delivered",
@@ -327,19 +337,22 @@ const DATA = {
               "d": 0
             }
           ],
-          "need": "Raf to finalize the package; MC to review and confirm access and use.",
+          "need": "Review the operating guidance and confirm any material service or positioning corrections.",
           "docs": [
             {
               "t": "GTM Operating Playbook",
-              "state": "Private working draft · team link pending"
+              "state": "Draft for MC review · restricted access",
+              "u": "https://docs.google.com/document/d/1CidKaWBtpDJYynJt4Cg23NTFp5RnTf2c/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
             },
             {
               "t": "Claude Companion",
-              "state": "Private working draft · team link pending"
+              "state": "Draft for MC review · restricted access",
+              "u": "https://drive.google.com/file/d/1jCEcF41UDjUoA7m85iokzx1oIa0IMngW/view?usp=drivesdk"
             },
             {
               "t": "Sales Starter Kit",
-              "state": "Private working draft · team link pending"
+              "state": "Draft for MC review · restricted access",
+              "u": "https://docs.google.com/document/d/1NQDF8i8HXKfJSisM4UesZBK1LKQzlMRb/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
             },
             {
               "t": "Existing PAS foundation",
@@ -355,8 +368,8 @@ const DATA = {
           "a": "2026-09-20",
           "b": "2026-11-20",
           "due": "SOW Day 60 · proposed Nov 20",
-          "note": "The earlier audit and design materials were delivered. The current design and implementation plan are drafted, and current operating ownership is recorded. Final alignment and review remain open; no completed integration is claimed.",
-          "need": "Raf and Jason to align the final design and implementation plan with the current setup.",
+          "note": "The current design and implementation plan are ready for MC review. Earlier audit materials remain historical references; no completed build or integration is claimed.",
+          "need": "Review the recommended design. Jason checks the current setup and implementation details.",
           "steps": [
             {
               "t": "Earlier audit and design materials delivered",
@@ -374,7 +387,8 @@ const DATA = {
           "docs": [
             {
               "t": "HubSpot Design and Implementation Plan",
-              "state": "Private working draft · team link pending"
+              "state": "Draft for MC review · restricted access",
+              "u": "https://docs.google.com/document/d/1jcqK4kiDSrwiIKX-sMu8xwz9z_W_AfTt/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
             },
             {
               "t": "Earlier HubSpot audit · September 23",
@@ -416,8 +430,8 @@ const DATA = {
           "a": "2026-10-20",
           "b": "2026-11-20",
           "due": "SOW Day 75 · proposed Nov 20",
-          "note": "The software go-to-market plan is drafted. Product validation, final commercial decisions and client review remain open.",
-          "need": "Raf and MC to validate the offering and finalize the launch plan.",
+          "note": "The separate SaaS go-to-market draft is ready for MC review. The intended offering, commercial facts and final launch decisions still require confirmation.",
+          "need": "Confirm the intended offering and missing commercial facts before finalizing the plan.",
           "steps": [
             {
               "t": "Working draft prepared",
@@ -435,7 +449,8 @@ const DATA = {
           "docs": [
             {
               "t": "Lift Off Go To Market Plan",
-              "state": "Private working draft · team link pending"
+              "state": "Draft for MC review · restricted access",
+              "u": "https://docs.google.com/document/d/19tph8v7a9RFhkbyYeuYaUOiIfHbCIJLg/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
             }
           ]
         },
@@ -446,7 +461,7 @@ const DATA = {
           "a": "2026-11-03",
           "b": "2026-11-30",
           "due": "SOW Day 90 · Nov 30",
-          "note": "The education plan and growth roadmap are drafted and aligned to current direction. Campaign operating ownership is recorded. Review and final handoff remain open; a future resource-library build is separate work.",
+          "note": "The education plan and growth roadmap are ready for MC review. A future self-service resource-library build remains a separate project; no pilot is planned.",
           "steps": [
             {
               "t": "Working drafts prepared",
@@ -461,11 +476,12 @@ const DATA = {
               "d": 0
             }
           ],
-          "need": "Raf to review and arrange final handoff; MC to review priorities and any factual corrections.",
+          "need": "Review the recommended priorities and record any factual corrections.",
           "docs": [
             {
               "t": "Partner Education Plan and 12 Month Roadmap",
-              "state": "Private working draft · team link pending"
+              "state": "Draft for MC review · restricted access",
+              "u": "https://docs.google.com/document/d/1Wp5pMQJPDojEQOhCPECebrhqgqolOs3e/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
             }
           ]
         }
@@ -536,8 +552,8 @@ const DATA = {
   "asks": [
     {
       "who": "Raf",
-      "what": "Finalize review drafts and client handoff",
-      "why": "Most completion work remains with Raf."
+      "what": "Collect review and finalize changes",
+      "why": "Current drafts are prepared; review feedback and final acceptance remain open."
     },
     {
       "who": "MC leadership",
@@ -553,7 +569,7 @@ const DATA = {
   "next": [
     {
       "t": "Review the mapped working documents",
-      "s": "Each SOW item now lists its actual working documents. Restricted links require team sign-in; private draft links remain pending approval.",
+      "s": "Current review drafts are linked to the corresponding SOW items. Approved reviewer sign-in is required; the delivered campaign remains held and its historical link is still under access review.",
       "w": "DOCUMENT MAP"
     },
     {
@@ -570,7 +586,7 @@ const DATA = {
 };
 
 const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const ST = {ok:"SHIPPED", build:"IN BUILD", review:"DELIVERED / REVIEW PENDING", draft:"DRAFT", need:"NEEDS MC", sched:"SCHEDULED"};
+const ST = {ok:"SHIPPED", build:"IN BUILD", review:"DELIVERED / REVIEW PENDING", draft:"DRAFT FOR MC REVIEW", need:"NEEDS MC", sched:"SCHEDULED"};
 
 /* tiles */
 const allItems = DATA.phases.flatMap(p => p.items);
@@ -658,13 +674,14 @@ document.getElementById("catchupBtn").addEventListener("click", () => {
   showModal(`
     <div class="eyebrow">Flight briefing · ${esc(DATA.updated)}</div>
     <h3>Where things stand</h3>
-    <p class="sum-line">Working drafts are prepared across the remaining SOW outputs. <b>Final review, client handoff and acceptance are separate steps.</b></p>
+    <p class="sum-line">Current drafts are linked for MC review. <b>Review access, final delivery and acceptance are separate steps.</b></p>
     <p class="sum-line">Previously delivered PAS, Mission Buddy, HubSpot and campaign components remain credited. Those supporting items are not a count of completed SOW deliverables.</p>
     <p class="sum-line">The redirected campaign package was delivered. Acceptance of the replacement against the original anniversary item is still unconfirmed.</p>
-    <p class="sum-line">Most completion work remains with Raf, with MC review and specific source, system and product dependencies. Existing revised dates remain proposed.</p>
-    <p class="sum-line">Sales Buddy delivery readiness, access, SOP and training remain open as a separate rollout. This update does not change document permissions or publish working-draft contents.</p>
+    <p class="sum-line">MC review now focuses on the recommendations and specific source, system and product dependencies. Existing revised dates remain proposed.</p>
+    <p class="sum-line">Sales Buddy delivery readiness, access, SOP and training remain open as a separate rollout. The board links to restricted review copies without publishing their contents.</p>
     <ul class="log">${DATA.shipped.slice(0,3).map(u => `<li><span class="d">${esc(u.d)}</span><span class="t"><b>${esc(u.t)}</b><small>${esc(u.s)}</small></span></li>`).join("")}</ul>`);
 });
 </script>
+
 
 
