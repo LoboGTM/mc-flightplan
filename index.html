@@ -46,7 +46,7 @@ section{margin-top:52px}
 .trow .lbl small{display:block;font-family:var(--mono);font-size:10px;color:var(--faint);font-weight:500;margin-top:2px;letter-spacing:.04em}
 .track{position:relative;height:22px;background:var(--panel);border-radius:6px;min-width:0}
 .bar{position:absolute;top:4px;bottom:4px;border-radius:5px;opacity:.92}
-.bar.ok{background:var(--ok)} .bar.build{background:var(--build)} .bar.review{background:var(--review)} .bar.need{background:var(--need)} .bar.sched{background:var(--sched);opacity:.55}
+.bar.ok{background:var(--ok)} .bar.build{background:var(--build)} .bar.review,.bar.draft{background:var(--review)} .bar.need{background:var(--need)} .bar.sched{background:var(--sched);opacity:.55}
 .bar .cap{position:absolute;right:-4px;top:-1px;bottom:-1px;width:3px;border-radius:2px}
 .axis{display:grid;grid-template-columns:218px minmax(0,1fr);gap:12px;margin-top:10px}
 .axis .scale{position:relative;height:18px;font-family:var(--mono);font-size:9.5px;color:var(--faint);letter-spacing:.05em}
@@ -89,7 +89,7 @@ section{margin-top:52px}
 .pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
 .pill{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.08em;padding:6px 12px;border-radius:999px;border:1px solid var(--line-hi);color:var(--muted)}
 .pill.st-ok{color:var(--ok);border-color:var(--ok)} .pill.st-build{color:var(--build);border-color:var(--build)}
-.pill.st-review{color:var(--review);border-color:var(--review)} .pill.st-need{color:var(--need);border-color:var(--need)}
+.pill.st-review,.pill.st-draft{color:var(--review);border-color:var(--review)} .pill.st-need{color:var(--need);border-color:var(--need)}
 .pill.st-sched{color:var(--sched)}
 .modal p{font-size:14px;color:var(--ink);margin:0 0 12px;max-width:58ch}
 .steps-k{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--faint);text-transform:uppercase;margin:16px 0 2px}
@@ -123,7 +123,7 @@ section{margin-top:52px}
       <button class="catchup-btn" id="catchupBtn">CATCH ME UP</button>
     </div>
     <h1>Mission Control Flight Plan</h1>
-    <p class="sub">Engagement status · <b>Lobo GTM × Mission Control</b> · live page, updated as work ships</p>
+    <p class="sub">Engagement status · <b>Lobo GTM × Mission Control</b> · live page, updated as work progresses</p><p class="sub" style="margin-top:10px">High-level status only. Drafts are not yet final client deliveries. Delivery does not imply acceptance. Revised dates remain proposed. Updated November 5, 2026 UTC.</p>
     <div class="telemetry" id="tiles"></div>
   </header>
 
@@ -133,7 +133,7 @@ section{margin-top:52px}
     <div class="legend">
       <span><i style="background:var(--ok)"></i>SHIPPED</span>
       <span><i style="background:var(--build)"></i>IN BUILD</span>
-      <span><i style="background:var(--review)"></i>IN REVIEW</span>
+      <span><i style="background:var(--review)"></i>DRAFT OR REVIEW PENDING</span>
       <span><i style="background:var(--need)"></i>NEEDS MC</span>
       <span><i style="background:var(--sched);opacity:.55"></i>SCHEDULED</span>
     </div>
@@ -141,8 +141,8 @@ section{margin-top:52px}
 
   <section>
     <div class="cols">
-      <div class="panel-card"><span class="k">Delivered and in your hands</span><h3>Shipped</h3><ul class="log" id="shipped"></ul></div>
-      <div class="panel-card"><span class="k">What keeps us fast</span><h3>Waiting on Mission Control</h3><div id="asks"></div></div>
+      <div class="panel-card"><span class="k">Prior delivery and discussions</span><h3>Historical work record</h3><ul class="log" id="shipped"></ul></div>
+      <div class="panel-card"><span class="k">What remains</span><h3>Review and dependencies</h3><div id="asks"></div></div>
       <div class="panel-card"><span class="k">In build right now</span><h3>Next up</h3><div id="next"></div></div>
     </div>
   </section>
@@ -156,86 +156,339 @@ section{margin-top:52px}
 <script>
 const START = new Date("2026-09-01T00:00:00");
 const END = new Date("2026-11-30T00:00:00");
-const TODAY = new Date("2026-10-31T00:00:00");
+const TODAY = new Date("2026-11-05T00:00:00");
 const SPAN = END - START;
 const pct = d => Math.min(100, Math.max(0, ((new Date(d + "T00:00:00") - START) / SPAN) * 100));
 
 const DATA = {
-  updated: "Oct 31",
-  day: 61,
-  phases: [
-    {name: "SOW No. 1 · nine deliverables · finish line Nov 30", items: [
-      {id:"ns", n:"1 · North Star summary", s:"build", a:"2026-09-15", b:"2026-11-13", due:"Was Oct 1 · now Nov 13",
-       note:"The three-year picture, the agreed ICP and the final Top 5 goals, on one page everyone signs off on. The ICP direction is set: Partners in growth mode. What's left is writing it down and getting Jason, Irit and Ori to confirm it.",
-       need:"30 minutes with Jason, Irit and Ori to confirm the draft.",
-       steps:[{t:"ICP direction set: Partners in growth mode",d:1},{t:"Strategy session",d:1},{t:"Written summary drafted",d:0},{t:"Confirmed by Jason, Irit and Ori",d:0}]},
-      {id:"kpi", n:"2 · Baseline KPI scoreboard", s:"build", a:"2026-09-15", b:"2026-11-13", due:"Was Oct 1 · now Nov 13",
-       note:"One page with the verified starting numbers every result gets measured against: leads, booked calls, closes, churn, and marketing spend and return.",
-       need:"Jesse's GA4 and Google Ads reports for the marketing lines.",
-       steps:[{t:"Financials workbook received from Ori (Sept 4)",d:1},{t:"Metric list agreed",d:0},{t:"Scoreboard built from the workbook and HubSpot",d:0},{t:"Reviewed with Ori",d:0}]},
-      {id:"comp", n:"3 · Sales comp plan", s:"build", a:"2026-09-15", b:"2026-11-20", due:"Was Oct 1 · now Nov 20",
-       note:"A rep compensation plan modeled against margins, built on the final pricing so the numbers hold up.",
-
-       steps:[{t:"Pricing decision kit delivered",d:1},{t:"Market comp benchmarks drafted",d:1},{t:"Rate card from Ori in hand (Sept 4)",d:1},{t:"Comp plan modeled against margins",d:0},{t:"Reviewed and approved",d:0}]},
-      {id:"team", n:"4 · Sales team assessment and hiring profile", s:"build", a:"2026-09-15", b:"2026-11-13", due:"Was Oct 16 · now Nov 13",
-       note:"Where the current sales process and team stand, and the profile and plan for the next hires: a sales rep and a marketing coordinator who can grow into leadership.",
-       steps:[{t:"Sales documents review (five findings)",d:1},{t:"Conversation with Daniel (week of Nov 2)",d:0},{t:"Assessment written up",d:0},{t:"Hiring profiles and plan",d:0}]},
-      {id:"pas", n:"5 · PAS playbook and talk tracks", s:"build", a:"2026-09-10", b:"2026-11-13", due:"Was Oct 16 · now Nov 13 (training wk of Nov 16)",
-       note:"One message system for marketing and sales. The positioning sheets and Mission Buddy are in your hands. Proposed for Nov 13: the team's edits folded in, the Sales Starter Kit, and Sales Buddy access with a one-page SOP. Proposed for the week of Nov 16: the recorded training session.",
-       steps:[{t:"PAS Positioning Sheet v1",d:1,u:"https://docs.google.com/document/d/1PVA_QWcwgYkWTOCycznKJhlU4GRGToUysnfgqUqfev4/edit"},{t:"Product PAS sheets (Playbook AI, LaunchPAD)",d:1},{t:"Mission Buddy for your Claude",d:1},{t:"Team edits folded into v1.1",d:0},{t:"Sales Starter Kit: talk tracks, Call 1 script, objection cards, qualification checklist, call scorecard (Nov 13)",d:0},{t:"Sales Buddy access and SOP (Nov 13)",d:0},{t:"Recorded training session (week of Nov 16)",d:0}]},
-      {id:"hub", n:"6 · HubSpot pipeline, scoring and sequences", s:"build", a:"2026-09-20", b:"2026-11-20", due:"Was Oct 31 · now Nov 20",
-       note:"The design for how HubSpot runs sales and marketing. The audit and the pipeline stage design are delivered, and Jason has rebuilt the portal. Left: lead scoring and sequence design matched to the new setup, plus a short implementation plan.",
-       need:"Jason's go-ahead to review the rebuilt portal.",
-       steps:[{t:"Full portal audit",d:1,u:"https://docs.google.com/document/d/187hjtmdeXhBHxAKugO_6052e7-i6R4ctlPJC_vZ3V90/edit"},{t:"Stage definitions and mapping v2",d:1},{t:"Review of Jason's rebuilt HubSpot",d:0},{t:"Lead scoring model",d:0},{t:"Sequence design",d:0},{t:"Implementation plan",d:0},{t:"Planned: Sales Buddy connected to HubSpot with Jason, after his go-ahead and testing",d:0}]},
-      {id:"anniv", n:"7 · Anniversary campaign concept and plan", s:"ok", a:"2026-09-10", b:"2026-10-28", due:"Redirected · closed",
-       note:"At Mission Control's request on Oct 22, the anniversary campaign was deferred and its planning and creative direction redirected to the help desk campaign. The campaign plan, copy, ads, comic and paid media strategy were delivered Oct 26 to 28. Mission Control decided on Oct 31 not to move forward with it. The files remain yours to use.",
-       steps:[{t:"Redirected to the help desk campaign at MC's request",d:1},{t:"Campaign plan, copy and creative delivered",d:1},{t:"Paid media package delivered",d:1}]},
-      {id:"lo", n:"8 · Lift Off go-to-market plan", s:"need", a:"2026-10-20", b:"2026-11-20", due:"Nov 15 · now Nov 20",
-       note:"Packaging, pricing and launch plan for Lift Off and LaunchPAD. Positioning is agreed and the product PAS sheet is drafted.",
-       need:"Hands-on Lift Off and LaunchPAD access from Ardit.",
-       steps:[{t:"Product demos",d:1},{t:"Product PAS sheet drafted",d:1},{t:"Hands-on access",d:0},{t:"Go-to-market plan delivered",d:0}]},
-      {id:"edu", n:"9 · Client education plan and 12-month roadmap", s:"sched", a:"2026-11-09", b:"2026-11-30", due:"Nov 30",
-       note:"A plan to keep existing Partners informed and growing with Mission Control, and the 12-month growth roadmap that ties all nine deliverables together.",
-       steps:[{t:"Client education campaign plan",d:0},{t:"12-month growth roadmap",d:0},{t:"Close-out review",d:0}]}
-    ]}
+  "updated": "Nov 5 UTC",
+  "day": 66,
+  "phases": [
+    {
+      "name": "SOW No. 1 · nine deliverables · finish line Nov 30",
+      "items": [
+        {
+          "id": "ns",
+          "n": "1 · North Star summary",
+          "s": "draft",
+          "a": "2026-09-15",
+          "b": "2026-11-13",
+          "due": "SOW Day 30 · proposed Nov 13",
+          "note": "A North Star working draft is prepared. Final review, client handoff and leadership confirmation remain open.",
+          "need": "Raf to finalize the review draft; MC leadership to confirm direction.",
+          "steps": [
+            {
+              "t": "Working draft prepared",
+              "d": 1
+            },
+            {
+              "t": "Final review and client handoff",
+              "d": 0
+            },
+            {
+              "t": "Leadership confirmation recorded",
+              "d": 0
+            }
+          ]
+        },
+        {
+          "id": "kpi",
+          "n": "2 · Baseline KPI scoreboard",
+          "s": "draft",
+          "a": "2026-09-15",
+          "b": "2026-11-13",
+          "due": "SOW Day 30 · proposed Nov 13",
+          "note": "The KPI scoreboard working draft is prepared. A dated baseline can support goal design; baseline verification and MC review remain open. Ongoing reporting updates are tracked separately.",
+          "need": "Raf to verify the dated baseline and document gaps; MC to confirm the KPIs and review cadence.",
+          "steps": [
+            {
+              "t": "Scoreboard working draft prepared",
+              "d": 1
+            },
+            {
+              "t": "Baseline verification and review",
+              "d": 0
+            },
+            {
+              "t": "Shared scoreboard handoff",
+              "d": 0
+            }
+          ]
+        },
+        {
+          "id": "comp",
+          "n": "3 · Sales comp plan",
+          "s": "draft",
+          "a": "2026-09-15",
+          "b": "2026-11-20",
+          "due": "SOW Day 30 · proposed Nov 20",
+          "note": "The compensation plan and calculator are drafted. Validation, leadership decisions and final handoff remain open.",
+          "steps": [
+            {
+              "t": "Plan and calculator drafts prepared",
+              "d": 1
+            },
+            {
+              "t": "Validation and leadership review",
+              "d": 0
+            },
+            {
+              "t": "Final handoff",
+              "d": 0
+            }
+          ],
+          "need": "Raf to finish validation; MC leadership to review and decide the terms."
+        },
+        {
+          "id": "team",
+          "n": "4 · Sales team and candidate assessment with hiring profile and plan",
+          "s": "draft",
+          "a": "2026-09-15",
+          "b": "2026-11-13",
+          "due": "SOW Day 45 · proposed Nov 13",
+          "note": "The sales assessment and hiring-plan working draft is prepared. Final review and client handoff remain open.",
+          "steps": [
+            {
+              "t": "Assessment and hiring-plan draft prepared",
+              "d": 1
+            },
+            {
+              "t": "Final review",
+              "d": 0
+            },
+            {
+              "t": "Client handoff",
+              "d": 0
+            }
+          ],
+          "need": "Raf to finalize the assessment; MC leadership to review the hiring plan."
+        },
+        {
+          "id": "pas",
+          "n": "5 · PAS playbook and talk tracks",
+          "s": "draft",
+          "a": "2026-09-10",
+          "b": "2026-11-13",
+          "due": "SOW Day 45 · proposed Nov 13 (training wk of Nov 16)",
+          "note": "The PAS foundation and Mission Buddy materials were previously delivered. The consolidated playbook and Claude companion are drafted; final review, handoff and practical team use remain open.",
+          "steps": [
+            {
+              "t": "PAS and Mission Buddy materials delivered",
+              "d": 1
+            },
+            {
+              "t": "Consolidated working drafts prepared",
+              "d": 1
+            },
+            {
+              "t": "Final package handoff and review",
+              "d": 0
+            }
+          ],
+          "need": "Raf to finalize the package; MC to review and confirm access and use."
+        },
+        {
+          "id": "hub",
+          "n": "6 · HubSpot pipeline, scoring and sequence design with implementation plan",
+          "s": "draft",
+          "a": "2026-09-20",
+          "b": "2026-11-20",
+          "due": "SOW Day 60 · proposed Nov 20",
+          "note": "The earlier HubSpot audit and design materials were delivered. The updated design and implementation-plan draft is prepared. Final alignment and review remain open; a completed migration or tested integration is not claimed.",
+          "need": "Raf and Jason to align the final design and implementation plan with the current setup.",
+          "steps": [
+            {
+              "t": "Earlier audit and design materials delivered",
+              "d": 1
+            },
+            {
+              "t": "Updated design and plan drafted",
+              "d": 1
+            },
+            {
+              "t": "Final alignment and client review",
+              "d": 0
+            }
+          ]
+        },
+        {
+          "id": "anniv",
+          "n": "7 · Anniversary campaign concept and plan",
+          "s": "review",
+          "a": "2026-09-10",
+          "b": "2026-10-28",
+          "due": "Original Sept 26 · replacement review open",
+          "note": "The redirected campaign package was delivered. Acceptance of that replacement against the original anniversary deliverable has not been confirmed. Delivery and acceptance are tracked separately.",
+          "steps": [
+            {
+              "t": "Replacement package delivered",
+              "d": 1
+            },
+            {
+              "t": "Replacement acceptance confirmed",
+              "d": 0
+            }
+          ],
+          "need": "Raf and MC to confirm the status of the replacement and record the decision."
+        },
+        {
+          "id": "lo",
+          "n": "8 · Lift Off go-to-market plan",
+          "s": "draft",
+          "a": "2026-10-20",
+          "b": "2026-11-20",
+          "due": "SOW Day 75 · proposed Nov 20",
+          "note": "The software go-to-market plan is drafted. Product validation, final commercial decisions and client review remain open.",
+          "need": "Raf and MC to validate the offering and finalize the launch plan.",
+          "steps": [
+            {
+              "t": "Working draft prepared",
+              "d": 1
+            },
+            {
+              "t": "Product validation and decisions",
+              "d": 0
+            },
+            {
+              "t": "Final plan handoff",
+              "d": 0
+            }
+          ]
+        },
+        {
+          "id": "edu",
+          "n": "9 · Client education plan and 12-month roadmap",
+          "s": "draft",
+          "a": "2026-11-03",
+          "b": "2026-11-30",
+          "due": "SOW Day 90 · Nov 30",
+          "note": "The existing-client education plan and growth-roadmap working drafts are prepared. Review, ownership and final handoff remain open.",
+          "steps": [
+            {
+              "t": "Working drafts prepared",
+              "d": 1
+            },
+            {
+              "t": "Priorities and ownership reviewed",
+              "d": 0
+            },
+            {
+              "t": "Final package handoff",
+              "d": 0
+            }
+          ],
+          "need": "Raf to finalize the package; MC to review priorities and ownership."
+        }
+      ]
+    }
   ],
-  shipped: [
-    {d:"Oct 28", t:"Help desk campaign plan and creative", s:"Plan, copy, ads in six sizes, comic and paid media strategy. Not moving forward; the files are yours."},
-    {d:"Oct 16", t:"Mission Buddy", s:"Your Claude project and PAS skill for campaigns, posts, sequences and sales prep."},
-    {d:"Oct 14", t:"Strategy session and pricing decision kit", s:"Direction set for Q4; the pricing decisions laid out for Mission Control."},
-    {d:"Oct 2", t:"HubSpot stage definitions and mapping v2", s:"The deal pipeline spec: stages, lifecycle rules and the migration map."},
-    {d:"Oct 1", t:"Product PAS sheets (Playbook AI, LaunchPAD)", s:"Each product gets its own positioning sheet."},
-    {d:"Sept 25", t:"GTM Master Build Plan", s:"Decision gates, phases, owners, and what ships when.", u:"https://docs.google.com/document/d/12rJseO4IQzWlk2Vgr0LWIf_pKQqdeMQwlVCr6b8LyyY/edit"},
-    {d:"Sept 23", t:"HubSpot audit and plan", s:"Full portal review with the pipeline design and AI integration plan.", u:"https://docs.google.com/document/d/187hjtmdeXhBHxAKugO_6052e7-i6R4ctlPJC_vZ3V90/edit"},
-    {d:"Sept 23", t:"Product deep dive", s:"Playbook AI and LaunchPAD walked end to end; positioning agreed."},
-    {d:"Sept 18", t:"PAS Positioning Sheet v1", s:"The master messaging document everything builds from.", u:"https://docs.google.com/document/d/1PVA_QWcwgYkWTOCycznKJhlU4GRGToUysnfgqUqfev4/edit"},
-    {d:"Sept 18", t:"Partner Program, first cut", s:"Referral tracks, incentives, and an interactive walkthrough.", u:"https://docs.google.com/document/d/1iGhK8QgPqPgrfMLiM3fZGy0Weapw280vwibqGewmWso/edit"},
-    {d:"Sept 18", t:"Sales documents review", s:"Five findings across scripts, deck, and process, with a fix order."}
+  "shipped": [
+    {
+      "d": "Oct 28",
+      "t": "Help desk campaign plan and creative",
+      "s": "Plan, copy, ads in six sizes, comic and paid media strategy. Not moving forward; the files are yours."
+    },
+    {
+      "d": "Oct 16",
+      "t": "Mission Buddy",
+      "s": "Your Claude project and PAS skill for campaigns, posts, sequences and sales prep."
+    },
+    {
+      "d": "Oct 14",
+      "t": "Strategy session and pricing decision kit",
+      "s": "Direction set for Q4; the pricing decisions laid out for Mission Control."
+    },
+    {
+      "d": "Oct 2",
+      "t": "HubSpot stage definitions and mapping v2",
+      "s": "The deal pipeline spec: stages, lifecycle rules and the migration map."
+    },
+    {
+      "d": "Oct 1",
+      "t": "Product PAS sheets (Playbook AI, LaunchPAD)",
+      "s": "Each product gets its own positioning sheet."
+    },
+    {
+      "d": "Sept 25",
+      "t": "GTM Master Build Plan",
+      "s": "Decision gates, phases, owners, and what ships when.",
+      "u": "https://docs.google.com/document/d/12rJseO4IQzWlk2Vgr0LWIf_pKQqdeMQwlVCr6b8LyyY/edit"
+    },
+    {
+      "d": "Sept 23",
+      "t": "HubSpot audit and plan",
+      "s": "Full portal review with the pipeline design and AI integration plan.",
+      "u": "https://docs.google.com/document/d/187hjtmdeXhBHxAKugO_6052e7-i6R4ctlPJC_vZ3V90/edit"
+    },
+    {
+      "d": "Sept 23",
+      "t": "Product deep dive",
+      "s": "Playbook AI and LaunchPAD walked end to end; positioning agreed."
+    },
+    {
+      "d": "Sept 18",
+      "t": "PAS Positioning Sheet v1",
+      "s": "The master messaging document everything builds from.",
+      "u": "https://docs.google.com/document/d/1PVA_QWcwgYkWTOCycznKJhlU4GRGToUysnfgqUqfev4/edit"
+    },
+    {
+      "d": "Sept 18",
+      "t": "Partner Program, first cut",
+      "s": "Referral tracks, incentives, and an interactive walkthrough.",
+      "u": "https://docs.google.com/document/d/1iGhK8QgPqPgrfMLiM3fZGy0Weapw280vwibqGewmWso/edit"
+    },
+    {
+      "d": "Sept 18",
+      "t": "Sales documents review",
+      "s": "Five findings across scripts, deck, and process, with a fix order."
+    }
   ],
-  asks: [
-    {who:"Jason", what:"Go-ahead to review the rebuilt HubSpot", why:"Starts the HubSpot review, scoring, sequences and the Sales Buddy connection."},
-    {who:"Ardit", what:"Lift Off and LaunchPAD access", why:"Unlocks the Lift Off go-to-market plan."},
-    {who:"Jesse", what:"GA4 and Google Ads reports", why:"Marketing baseline for the scoreboard."}
+  "asks": [
+    {
+      "who": "Raf",
+      "what": "Finalize review drafts and client handoff",
+      "why": "Most completion work remains with Raf."
+    },
+    {
+      "who": "MC leadership",
+      "what": "Review and record decisions",
+      "why": "Confirm direction, priorities and any requested changes."
+    },
+    {
+      "who": "Raf + MC owners",
+      "what": "Resolve remaining source and system dependencies",
+      "why": "Complete baseline verification, final HubSpot alignment and product validation."
+    }
   ],
-  next: [
-    {t:"Conversation with Daniel", s:"Sales challenges in his words, with a short write-up for Ori.", w:"WEEK OF NOV 2"},
-    {t:"Touch-base on the finish list", s:"Walk Ori, Jason and Irit through the status document.", w:"WEEK OF NOV 2"},
-    {t:"North Star summary draft", s:"One page for Jason, Irit and Ori to confirm.", w:"FRI NOV 6"},
-    {t:"Sales Starter Kit and Sales Buddy access", s:"Talk tracks, Call 1 script, objection cards, checklist and scorecard, plus Sales Buddy access and SOP. Recorded training follows the week of Nov 16.", w:"FRI NOV 13"}
+  "next": [
+    {
+      "t": "Review the consolidated working package",
+      "s": "Draft preparation is recorded separately from delivery to MC and acceptance.",
+      "w": "IN REVIEW"
+    },
+    {
+      "t": "Complete staged November handoffs",
+      "s": "Existing revised dates remain proposed; no new dates or acceptance are implied by this update.",
+      "w": "NOVEMBER"
+    },
+    {
+      "t": "Sales Buddy access and training",
+      "s": "Delivery readiness, access, SOP and training remain open and are tracked separately from the nine SOW document outputs.",
+      "w": "SEPARATE ROLLOUT"
+    }
   ]
 };
 
 const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const ST = {ok:"SHIPPED", build:"IN BUILD", review:"IN REVIEW", need:"NEEDS MC", sched:"SCHEDULED"};
+const ST = {ok:"SHIPPED", build:"IN BUILD", review:"DELIVERED / REVIEW PENDING", draft:"DRAFT", need:"NEEDS MC", sched:"SCHEDULED"};
 
 /* tiles */
 const allItems = DATA.phases.flatMap(p => p.items);
 const counts = allItems.reduce((m,i)=>(m[i.s]=(m[i.s]||0)+1,m),{});
 document.getElementById("tiles").innerHTML = `
-  <div class="tile verdict"><div class="k">Status</div><div class="v">CLOSING OUT</div></div>
-  <div class="tile"><div class="k">Mission day</div><div class="v">${DATA.day}<small> / 90</small></div></div>
-  <div class="tile"><div class="k">Delivered</div><div class="v">${DATA.shipped.length}<small> items</small></div></div>
-  <div class="tile"><div class="k">In motion</div><div class="v">${(counts.build||0)+(counts.review||0)}<small> of ${allItems.length}</small></div></div>
+  <div class="tile verdict"><div class="k">Status</div><div class="v" style="font-size:16px">REVIEW AND HANDOFF</div></div>
+  <div class="tile"><div class="k">Revised dates</div><div class="v" style="font-size:16px">PROPOSED</div></div>
+  <div class="tile"><div class="k">Acceptance</div><div class="v" style="font-size:16px">NOT IMPLIED</div></div>
   <div class="tile"><div class="k">Updated</div><div class="v" style="font-size:15px;padding-top:4px">${DATA.updated}</div></div>`;
 
 /* timeline */
@@ -310,11 +563,12 @@ document.getElementById("catchupBtn").addEventListener("click", () => {
   showModal(`
     <div class="eyebrow">Flight briefing · ${esc(DATA.updated)}</div>
     <h3>Where things stand</h3>
-    <p class="sum-line">Day <b>${DATA.day} of 90</b>. The SOW minimum term runs through <b>Nov 30</b>, and this page tracks the nine SOW deliverables to that date. <b>${DATA.shipped.length} items</b> have shipped so far.</p>
-    <p class="sum-line">Several deliverables due in October slipped. Each one now shows its original date and a proposed finish date. Most of the remaining work is on Raf.</p>
-    <p class="sum-line">The anniversary campaign was redirected to the help desk campaign at Mission Control's request. That plan and creative were delivered, and Mission Control decided not to move forward with it, so that deliverable is closed.</p>
-    <p class="sum-line">Fastest way to finish on time: <b>Jason's go-ahead on the HubSpot review, Ardit's Lift Off access, and Jesse's GA4 and Ads reports</b>. Everything else is on Raf.</p>
-    <p class="sum-line">Updates go out <b>every Monday</b> (this week's work and what's needed) and <b>every Friday</b> (what got done, with links). This page is updated the same days.</p>
+    <p class="sum-line">Working drafts are prepared across the remaining SOW outputs. <b>Final review, client handoff and acceptance are separate steps.</b></p>
+    <p class="sum-line">Previously delivered PAS, Mission Buddy, HubSpot and campaign components remain credited. Those supporting items are not a count of completed SOW deliverables.</p>
+    <p class="sum-line">The redirected campaign package was delivered. Acceptance of the replacement against the original anniversary item is still unconfirmed.</p>
+    <p class="sum-line">Most completion work remains with Raf, with MC review and specific source, system and product dependencies. Existing revised dates remain proposed.</p>
+    <p class="sum-line">Sales Buddy delivery readiness, access, SOP and training remain open as a separate rollout. This update does not change document permissions or publish working-draft contents.</p>
     <ul class="log">${DATA.shipped.slice(0,3).map(u => `<li><span class="d">${esc(u.d)}</span><span class="t"><b>${esc(u.t)}</b><small>${esc(u.s)}</small></span></li>`).join("")}</ul>`);
 });
 </script>
+
