@@ -126,7 +126,7 @@ section{margin-top:52px}
       <button class="catchup-btn" id="catchupBtn">CATCH ME UP</button>
     </div>
     <h1>Mission Control Flight Plan</h1>
-    <p class="sub">Engagement status · <b>Lobo GTM × Mission Control</b> · live page, updated as work progresses</p><p class="sub" style="margin-top:10px">High-level status only. Current drafts are available for MC review through restricted links. Delivery does not imply acceptance. Revised dates remain proposed. Updated November 5, 2026 UTC.</p>
+    <p class="sub">Engagement status · <b>Lobo GTM × Mission Control</b> · live page, updated as work progresses</p><p class="sub" style="margin-top:10px">Updated November 13 against Jason's November 12 feedback. None of the nine deliverables is accepted yet. This page shows what is being worked on, in priority order, and what each item is waiting on. All dates are proposed. The engagement ends November 30 with a documented handover.</p>
     <div class="telemetry" id="tiles"></div>
   </header>
 
@@ -144,16 +144,16 @@ section{margin-top:52px}
 
 
   <section id="documents">
-    <div class="sec-head"><h2>Where the documents are</h2><span class="k">Mapped to the nine SOW outputs</span></div>
-    <p class="doc-intro">This board is the delivery and status index. The GTM Operating Playbook is the operating guide. The <a href="https://docs.google.com/document/d/12rJseO4IQzWlk2Vgr0LWIf_pKQqdeMQwlVCr6b8LyyY/edit" target="_blank" rel="noopener">Master Build Plan</a> is retained as an internal working reference, not another operating guide. Current draft links require approved reviewer sign-in. <a href="https://drive.google.com/drive/folders/1N7Gy2jvAHY4qNMzKVyA9G8oZax9ipgi2" target="_blank" rel="noopener">Open the Draft for MC Review folder</a>. Existing references retain their prior restricted team access.</p>
+    <div class="sec-head"><h2>Where the documents are</h2><span class="k">Earlier drafts, labeled by status</span></div>
+    <p class="doc-intro">Earlier drafts are kept here for reference and labeled by status. None was accepted in the Nov 12 review; new versions will be linked here as they are delivered. Links require approved reviewer sign-in.</p>
     <div id="documentMap" class="doc-map"></div>
   </section>
 
   <section>
     <div class="cols">
       <div class="panel-card"><span class="k">Prior delivery and discussions</span><h3>Historical work record</h3><ul class="log" id="shipped"></ul></div>
-      <div class="panel-card"><span class="k">What remains</span><h3>Review and dependencies</h3><div id="asks"></div></div>
-      <div class="panel-card"><span class="k">In build right now</span><h3>Next up</h3><div id="next"></div></div>
+      <div class="panel-card"><span class="k">Who owes what</span><h3>Open asks</h3><div id="asks"></div></div>
+      <div class="panel-card"><span class="k">Priority order</span><h3>What's being worked on</h3><div id="next"></div></div>
     </div>
   </section>
 
@@ -166,423 +166,207 @@ section{margin-top:52px}
 <script>
 const START = new Date("2026-09-01T00:00:00");
 const END = new Date("2026-11-30T00:00:00");
-const TODAY = new Date("2026-11-05T00:00:00");
+const TODAY = new Date("2026-11-13T00:00:00");
 const SPAN = END - START;
 const pct = d => Math.min(100, Math.max(0, ((new Date(d + "T00:00:00") - START) / SPAN) * 100));
 
 const DATA = {
-  "updated": "Nov 5 UTC",
-  "day": 66,
+  "updated": "Nov 13",
+  "day": 74,
   "phases": [
     {
-      "name": "SOW No. 1 · nine deliverables · finish line Nov 30",
+      "name": "SOW No. 1 · nine deliverables · ends Nov 30 · Jason's Nov 12 feedback applied",
       "items": [
         {
-          "id": "ns",
-          "n": "1 · North Star summary",
-          "s": "draft",
-          "a": "2026-09-15",
-          "b": "2026-11-13",
-          "due": "SOW Day 30 · proposed Nov 13",
-          "note": "The North Star recommendations are ready for MC review. Leadership confirmation and final acceptance remain open.",
-          "need": "MC leadership to review the recommended direction and record decisions or factual corrections.",
+          "id": "anniv",
+          "n": "7 · Google Ads diagnostic (top priority)",
+          "s": "build",
+          "a": "2026-11-13",
+          "b": "2026-11-19",
+          "due": "Proposed Nov 19 · 3 business days after access",
+          "note": "Top priority because the ads cost money every day. Diagnose the Helpdesk Campaign and Performance Max: keywords, ad copy, landing page, conversion tracking and HubSpot follow-up, with fixes in priority order. No fee change. The KHDaaS helpdesk campaign is closed, not pending.",
+          "need": "Jason: grant read-only Google Ads access (steps sent Nov 13). Jesse: current tracking setup.",
           "steps": [
-            {
-              "t": "Working draft prepared",
-              "d": 1
-            },
-            {
-              "t": "Final review and client handoff",
-              "d": 0
-            },
-            {
-              "t": "Leadership confirmation recorded",
-              "d": 0
-            }
+            {"t": "Read-only access steps sent to Jason", "d": 1},
+            {"t": "Access granted", "d": 0},
+            {"t": "Account, landing page and tracking review", "d": 0},
+            {"t": "Findings and prioritized fixes delivered", "d": 0}
           ],
           "docs": [
-            {
-              "t": "North Star review",
-              "state": "Draft for MC review · restricted access",
-              "u": "https://docs.google.com/document/d/1JDdHcZ9TqkUUTqWSkgyX8Kt5NEVZFC1z/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
-            },
-            {
-              "t": "Guided MC review",
-              "u": "https://mc-gtm-wizard.netlify.app/",
-              "state": "Draft for MC review · password required"
-            }
-          ]
-        },
-        {
-          "id": "kpi",
-          "n": "2 · Baseline KPI scoreboard",
-          "s": "draft",
-          "a": "2026-09-15",
-          "b": "2026-11-13",
-          "due": "SOW Day 30 · proposed Nov 13",
-          "note": "The HubSpot dashboard blueprint is ready for MC review. The source workbook stays internal. Dated baseline approval and technical reporting checks remain open; no live dashboard or working integration is claimed.",
-          "need": "Review the recommended measures and dated targets. Source owners validate missing records while live reporting is checked separately.",
-          "steps": [
-            {
-              "t": "Dashboard blueprint and source reference prepared",
-              "d": 1
-            },
-            {
-              "t": "Baseline verification and review",
-              "d": 0
-            },
-            {
-              "t": "Shared scoreboard handoff",
-              "d": 0
-            }
-          ],
-          "docs": [
-            {
-              "t": "HubSpot Dashboard Blueprint",
-              "state": "Draft for MC review · restricted access",
-              "u": "https://docs.google.com/document/d/1-2Qr8ZI_7w5FpiP_95ITJY9mHCP2psCS/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
-            },
-            {
-              "t": "KPI source workbook",
-              "state": "Internal calculation support · not the client-facing dashboard"
-            }
-          ]
-        },
-        {
-          "id": "comp",
-          "n": "3 · Sales comp plan",
-          "s": "draft",
-          "a": "2026-09-15",
-          "b": "2026-11-20",
-          "due": "SOW Day 30 · proposed Nov 20",
-          "note": "The compensation plan and calculator are ready for MC review. Actual-results calibration and formal adoption remain open.",
-          "steps": [
-            {
-              "t": "Plan and calculator drafts prepared",
-              "d": 1
-            },
-            {
-              "t": "Validation and leadership review",
-              "d": 0
-            },
-            {
-              "t": "Final handoff",
-              "d": 0
-            }
-          ],
-          "need": "Review the proposed terms; validate existing records so quota and payout rates can be calibrated.",
-          "docs": [
-            {
-              "t": "Phased Hiring and Compensation Plan",
-              "state": "Draft for MC review · restricted access",
-              "u": "https://docs.google.com/document/d/1mK3teOS_U7TXnUBnwTpThwsasj_CTn-r/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
-            },
-            {
-              "t": "Two Role Compensation Calculator",
-              "state": "Draft for MC review · restricted access",
-              "u": "https://docs.google.com/spreadsheets/d/1oXaFzGe5tVll8S1xPpuE54Jo3hv3sRmJ/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
-            }
-          ]
-        },
-        {
-          "id": "team",
-          "n": "4 · Sales team and candidate assessment with hiring profile and plan",
-          "s": "draft",
-          "a": "2026-09-15",
-          "b": "2026-11-13",
-          "due": "SOW Day 45 · proposed Nov 13",
-          "note": "The assessment and hiring plan are ready for MC review. No new candidate assessment is assumed.",
-          "steps": [
-            {
-              "t": "Assessment and hiring-plan draft prepared",
-              "d": 1
-            },
-            {
-              "t": "Final review",
-              "d": 0
-            },
-            {
-              "t": "Client handoff",
-              "d": 0
-            }
-          ],
-          "need": "Review the recommended hiring profile and plan; flag factual corrections.",
-          "docs": [
-            {
-              "t": "Sales Assessment and Hiring Plan",
-              "state": "Draft for MC review · restricted access",
-              "u": "https://docs.google.com/document/d/1U-ttmX0aS8ehv0dpQ3l19jSHsGMwgXQa/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
-            }
-          ]
-        },
-        {
-          "id": "pas",
-          "n": "5 · PAS playbook and talk tracks",
-          "s": "draft",
-          "a": "2026-09-10",
-          "b": "2026-11-13",
-          "due": "SOW Day 45 · proposed Nov 13 (training wk of Nov 16)",
-          "note": "The PAS foundation and Mission Buddy materials were previously delivered. The current playbook, companion and Starter Kit are available as drafts for MC review; practical use and acceptance remain separate.",
-          "steps": [
-            {
-              "t": "PAS and Mission Buddy materials delivered",
-              "d": 1
-            },
-            {
-              "t": "Consolidated working drafts prepared",
-              "d": 1
-            },
-            {
-              "t": "Final package handoff and review",
-              "d": 0
-            }
-          ],
-          "need": "Review the operating guidance and confirm any material service or positioning corrections.",
-          "docs": [
-            {
-              "t": "GTM Operating Playbook",
-              "state": "Draft for MC review · restricted access",
-              "u": "https://docs.google.com/document/d/1CidKaWBtpDJYynJt4Cg23NTFp5RnTf2c/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
-            },
-            {
-              "t": "Claude Companion",
-              "state": "Draft for MC review · restricted access",
-              "u": "https://drive.google.com/file/d/1jCEcF41UDjUoA7m85iokzx1oIa0IMngW/view?usp=drivesdk"
-            },
-            {
-              "t": "Sales Starter Kit",
-              "state": "Draft for MC review · restricted access",
-              "u": "https://docs.google.com/document/d/1NQDF8i8HXKfJSisM4UesZBK1LKQzlMRb/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
-            },
-            {
-              "t": "Existing PAS foundation",
-              "u": "https://docs.google.com/document/d/1PVA_QWcwgYkWTOCycznKJhlU4GRGToUysnfgqUqfev4/edit",
-              "state": "Supporting reference · team sign-in required"
-            }
+            {"t": "KHDaaS helpdesk campaign · Still Here", "u": "https://mc-khdaas-eol-campaign.netlify.app/", "state": "Closed · October 27 plan kept for reference only"}
           ]
         },
         {
           "id": "hub",
-          "n": "6 · HubSpot pipeline, scoring and sequence design with implementation plan",
-          "s": "draft",
-          "a": "2026-09-20",
-          "b": "2026-11-20",
-          "due": "SOW Day 60 · proposed Nov 20",
-          "note": "The current design and implementation plan are ready for MC review. Earlier audit materials remain historical references; no completed build or integration is claimed.",
-          "need": "Review the recommended design. Jason checks the current setup and implementation details.",
+          "n": "6 · HubSpot findings review and sequence copy review",
+          "s": "build",
+          "a": "2026-11-13",
+          "b": "2026-11-18",
+          "due": "Proposed Nov 18",
+          "note": "Findings only: review Jason's HubSpot build against his Setup Reference, then review the sequence and drip copy against the PAS. Readiness categories replace a scoring model. Jason owns and runs HubSpot; no build work by Lobo.",
+          "need": "Jason: confirm HubSpot view access for the review.",
           "steps": [
-            {
-              "t": "Earlier audit and design materials delivered",
-              "d": 1
-            },
-            {
-              "t": "Updated design and plan drafted",
-              "d": 1
-            },
-            {
-              "t": "Final alignment and client review",
-              "d": 0
-            }
+            {"t": "Setup Reference received from Jason (Slack)", "d": 1},
+            {"t": "Build reviewed against the Setup Reference", "d": 0},
+            {"t": "Sequence and drip copy reviewed against the PAS", "d": 0},
+            {"t": "Findings delivered to Jason", "d": 0}
           ],
           "docs": [
-            {
-              "t": "HubSpot Design and Implementation Plan",
-              "state": "Draft for MC review · restricted access",
-              "u": "https://docs.google.com/document/d/1jcqK4kiDSrwiIKX-sMu8xwz9z_W_AfTt/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
-            },
-            {
-              "t": "Earlier HubSpot audit · September 23",
-              "u": "https://docs.google.com/document/d/187hjtmdeXhBHxAKugO_6052e7-i6R4ctlPJC_vZ3V90/edit",
-              "state": "Historical reference · not the latest design · team sign-in required"
-            }
+            {"t": "HubSpot Design and Implementation Plan", "state": "Earlier draft · superseded by findings-only review", "u": "https://docs.google.com/document/d/1jcqK4kiDSrwiIKX-sMu8xwz9z_W_AfTt/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"}
           ]
         },
         {
-          "id": "anniv",
-          "n": "7 · KHDaaS helpdesk campaign (replaces anniversary)",
-          "s": "review",
-          "a": "2026-09-10",
-          "b": "2026-10-28",
-          "due": "Delivered Oct 27 · review open",
-          "note": "The original anniversary campaign was replaced by the KHDaaS helpdesk campaign. The Still Here campaign plan was delivered October 27 and remains held from execution. Final review and acceptance have not been recorded.",
+          "id": "pas",
+          "n": "5 · PAS seller guide, CS talk tracks and Mission Buddy how-to",
+          "s": "build",
+          "a": "2026-11-10",
+          "b": "2026-11-20",
+          "due": "Seller guide Nov 16 · CS tracks proposed Nov 20",
+          "note": "Clean, short seller version for the November training: no footnotes, source notes or review labels. CS talk tracks for four situations (value check-ins, champion leaves, usage or needs change, at-risk saves on value, not discounts), built with Steve. One-page Mission Buddy how-to. Works without Sales Buddy. The current Company Reference governs.",
+          "need": "Steve: one working session on the CS talk tracks. Jason and Ori: decide whether Sales Buddy is handed over; if yes, owner and cost after Nov 30.",
           "steps": [
-            {
-              "t": "Helpdesk campaign plan delivered",
-              "d": 1
-            },
-            {
-              "t": "Final review and acceptance recorded",
-              "d": 0
-            }
+            {"t": "PAS foundation and Mission Buddy delivered", "d": 1},
+            {"t": "Clean seller version for training", "d": 0},
+            {"t": "Mission Buddy one-page how-to", "d": 0},
+            {"t": "CS talk tracks reviewed with Steve", "d": 0},
+            {"t": "Training delivered (week of Nov 16)", "d": 0}
           ],
-          "need": "Record any specific plan changes and final review status; do not restart execution without a new decision.",
           "docs": [
-            {
-              "t": "KHDaaS helpdesk campaign · Still Here",
-              "u": "https://mc-khdaas-eol-campaign.netlify.app/",
-              "state": "Delivered replacement · historical October 27 plan · execution held"
-            }
+            {"t": "Existing PAS foundation", "u": "https://docs.google.com/document/d/1PVA_QWcwgYkWTOCycznKJhlU4GRGToUysnfgqUqfev4/edit", "state": "Supporting reference · team sign-in required"}
+          ]
+        },
+        {
+          "id": "team",
+          "n": "4 · Sales assessment and BDR manager handover",
+          "s": "build",
+          "a": "2026-11-13",
+          "b": "2026-11-24",
+          "due": "Memo proposed Nov 20 · handover Nov 24",
+          "note": "Private memo to Jason, Ori and Irit only, based on recorded calls. Ori picks the BDR manager; the coaching routine and hiring steps become a handover for that person. Shared materials carry no personal assessment content.",
+          "need": "Ori: BDR manager choice by Nov 20.",
+          "steps": [
+            {"t": "Call recordings collected", "d": 0},
+            {"t": "Private memo delivered to leadership", "d": 0},
+            {"t": "Shared materials checked and confirmed clean in writing", "d": 0},
+            {"t": "Coaching routine and hiring steps handed to BDR manager", "d": 0}
+          ]
+        },
+        {
+          "id": "ns",
+          "n": "1 · North Star rebuilt on 40% growth",
+          "s": "need",
+          "a": "2026-11-17",
+          "b": "2026-11-20",
+          "due": "Proposed Nov 20 · after Ori's Nov 17 forecast",
+          "note": "Rebuild on 40% growth for 2027 from Ori's forecast for 2026. ICP: established, growth-minded MSPs of all sizes; solo operators are not a target, but good inbound fits are welcome. One-page three-year picture. Rollout start stays open.",
+          "need": "Ori: 2026 forecast by Nov 17.",
+          "steps": [
+            {"t": "Ori's forecast received", "d": 0},
+            {"t": "One-page North Star on 40% delivered", "d": 0}
+          ],
+          "docs": [
+            {"t": "North Star review", "state": "Earlier draft · not accepted · being rebuilt", "u": "https://docs.google.com/document/d/1JDdHcZ9TqkUUTqWSkgyX8Kt5NEVZFC1z/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"}
+          ]
+        },
+        {
+          "id": "kpi",
+          "n": "2 · Scoreboard on Jason's HubSpot dashboards",
+          "s": "need",
+          "a": "2026-11-17",
+          "b": "2026-11-30",
+          "due": "Baseline proposed Nov 24 · handover Nov 30",
+          "note": "Built on Jason's HubSpot dashboards, adding stage-conversion cohorts, win rate and source-to-won. Baseline verified with Ori (finance, churn, CAC). Weekly scoreboard reviews through Nov 30, then a documented handover.",
+          "need": "Ori: margins, losses, spend and CAC inputs by Nov 17.",
+          "steps": [
+            {"t": "Ori's baseline inputs received", "d": 0},
+            {"t": "Cohort, win-rate and source-to-won views added", "d": 0},
+            {"t": "Weekly scoreboard reviews through Nov 30", "d": 0},
+            {"t": "Documented handover", "d": 0}
+          ],
+          "docs": [
+            {"t": "HubSpot Dashboard Blueprint", "state": "Earlier draft · not accepted · being rebuilt", "u": "https://docs.google.com/document/d/1-2Qr8ZI_7w5FpiP_95ITJY9mHCP2psCS/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"}
+          ]
+        },
+        {
+          "id": "comp",
+          "n": "3 · Comp plan and working calculator",
+          "s": "need",
+          "a": "2026-11-17",
+          "b": "2026-11-24",
+          "due": "Proposed Nov 24 · after Ori's Nov 20 direction",
+          "note": "BDR quota and per-opportunity rate; senior seller paid on 12 months of collected contribution; modeled on Ori's margins with a working calculator. Ori decides any comp changes.",
+          "need": "Ori: margins by Nov 17 and comp direction by Nov 20.",
+          "steps": [
+            {"t": "Margins and comp direction received", "d": 0},
+            {"t": "Plan and working calculator delivered", "d": 0}
           ]
         },
         {
           "id": "lo",
-          "n": "8 · Lift Off go-to-market plan",
-          "s": "draft",
-          "a": "2026-10-20",
-          "b": "2026-11-20",
-          "due": "SOW Day 75 · proposed Nov 20",
-          "note": "The separate SaaS go-to-market draft is ready for MC review. The intended offering, commercial facts and final launch decisions still require confirmation.",
-          "need": "Confirm the intended offering and missing commercial facts before finalizing the plan.",
+          "n": "8 · Software platform GTM (Playbook AI + LaunchPAD)",
+          "s": "build",
+          "a": "2026-11-13",
+          "b": "2026-11-24",
+          "due": "Proposed Nov 24",
+          "note": "One plan: Playbook AI as the entry product and LaunchPAD (includes Playbook AI) as the full platform. Packaging, a pricing recommendation against competitors and a 90-day launch plan. Lift Off is the Partner portal and is not sold.",
+          "need": "Raf: send Jason the product access list. Jason: grant product access.",
           "steps": [
-            {
-              "t": "Working draft prepared",
-              "d": 1
-            },
-            {
-              "t": "Product validation and decisions",
-              "d": 0
-            },
-            {
-              "t": "Final plan handoff",
-              "d": 0
-            }
+            {"t": "Product access list sent to Jason", "d": 0},
+            {"t": "Product access granted", "d": 0},
+            {"t": "Packaging, pricing and 90-day plan delivered", "d": 0}
           ],
           "docs": [
-            {
-              "t": "Lift Off Go To Market Plan",
-              "state": "Draft for MC review · restricted access",
-              "u": "https://docs.google.com/document/d/19tph8v7a9RFhkbyYeuYaUOiIfHbCIJLg/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
-            }
+            {"t": "Lift Off Go To Market Plan", "state": "Earlier draft · superseded by the platform plan", "u": "https://docs.google.com/document/d/19tph8v7a9RFhkbyYeuYaUOiIfHbCIJLg/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"}
           ]
         },
         {
           "id": "edu",
-          "n": "9 · Client education plan and 12-month roadmap",
-          "s": "draft",
-          "a": "2026-11-03",
+          "n": "9 · Partner education plan and roadmap on 40%",
+          "s": "need",
+          "a": "2026-11-16",
           "b": "2026-11-30",
-          "due": "SOW Day 90 · Nov 30",
-          "note": "The education plan and growth roadmap are ready for MC review. A future self-service resource-library build remains a separate project; no pilot is planned.",
+          "due": "Nov 30 · after Ori's Nov 16 scope",
+          "note": "Rebuild on 40% growth. Delivered through HubSpot and tied to the CS talk tracks. Includes the answer on when and how the education pilot was removed.",
+          "need": "Ori: confirm education scope by Nov 16.",
           "steps": [
-            {
-              "t": "Working drafts prepared",
-              "d": 1
-            },
-            {
-              "t": "Current direction and remaining plan review",
-              "d": 0
-            },
-            {
-              "t": "Final package handoff",
-              "d": 0
-            }
+            {"t": "Scope confirmed by Ori", "d": 0},
+            {"t": "Pilot question answered", "d": 0},
+            {"t": "Plan and roadmap delivered", "d": 0}
           ],
-          "need": "Review the recommended priorities and record any factual corrections.",
           "docs": [
-            {
-              "t": "Partner Education Plan and 12 Month Roadmap",
-              "state": "Draft for MC review · restricted access",
-              "u": "https://docs.google.com/document/d/1Wp5pMQJPDojEQOhCPECebrhqgqolOs3e/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
-            }
+            {"t": "Partner Education Plan and 12 Month Roadmap", "state": "Earlier draft · not accepted · being rebuilt", "u": "https://docs.google.com/document/d/1Wp5pMQJPDojEQOhCPECebrhqgqolOs3e/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"}
           ]
         }
       ]
     }
   ],
   "shipped": [
-    {
-      "d": "Oct 27",
-      "t": "Help desk campaign plan and creative",
-      "s": "Plan, copy, ads in six sizes, comic and paid media strategy. Not moving forward; the files are yours."
-    },
-    {
-      "d": "Oct 16",
-      "t": "Mission Buddy",
-      "s": "Your Claude project and PAS skill for campaigns, posts, sequences and sales prep."
-    },
-    {
-      "d": "Oct 14",
-      "t": "Strategy session and pricing decision kit",
-      "s": "Direction set for Q4; the pricing decisions laid out for Mission Control."
-    },
-    {
-      "d": "Oct 2",
-      "t": "HubSpot stage definitions and mapping v2",
-      "s": "The deal pipeline spec: stages, lifecycle rules and the migration map."
-    },
-    {
-      "d": "Oct 1",
-      "t": "Product PAS sheets (Playbook AI, LaunchPAD)",
-      "s": "Each product gets its own positioning sheet."
-    },
-    {
-      "d": "Sept 25",
-      "t": "GTM Master Build Plan",
-      "s": "Internal working build plan, updated November 5. Use the playbook for operating guidance and this board for delivery status; team sign-in required.",
-      "u": "https://docs.google.com/document/d/12rJseO4IQzWlk2Vgr0LWIf_pKQqdeMQwlVCr6b8LyyY/edit"
-    },
-    {
-      "d": "Sept 23",
-      "t": "HubSpot audit and plan",
-      "s": "Full portal review with the pipeline design and AI integration plan.",
-      "u": "https://docs.google.com/document/d/187hjtmdeXhBHxAKugO_6052e7-i6R4ctlPJC_vZ3V90/edit"
-    },
-    {
-      "d": "Sept 23",
-      "t": "Product deep dive",
-      "s": "Playbook AI and LaunchPAD walked end to end; positioning agreed."
-    },
-    {
-      "d": "Sept 18",
-      "t": "PAS Positioning Sheet v1",
-      "s": "The master messaging document everything builds from.",
-      "u": "https://docs.google.com/document/d/1PVA_QWcwgYkWTOCycznKJhlU4GRGToUysnfgqUqfev4/edit"
-    },
-    {
-      "d": "Sept 18",
-      "t": "Partner Program, first cut",
-      "s": "Referral tracks, incentives, and an interactive walkthrough.",
-      "u": "https://docs.google.com/document/d/1iGhK8QgPqPgrfMLiM3fZGy0Weapw280vwibqGewmWso/edit"
-    },
-    {
-      "d": "Sept 18",
-      "t": "Sales documents review",
-      "s": "Five findings across scripts, deck, and process, with a fix order."
-    }
+    {"d": "Nov 13", "t": "Google Ads read-only access steps", "s": "Sent to Jason so the ads diagnostic can start."},
+    {"d": "Nov 12", "t": "Jason's feedback on all nine deliverables", "s": "Received. None accepted yet; this board now tracks the rework against it."},
+    {"d": "Oct 27", "t": "Help desk campaign plan and creative", "s": "Plan, copy, ads in six sizes, comic and paid media strategy. Campaign closed; the files are yours."},
+    {"d": "Oct 16", "t": "Mission Buddy", "s": "Your Claude project and PAS skill for campaigns, posts, sequences and sales prep."},
+    {"d": "Oct 14", "t": "Strategy session and pricing decision kit", "s": "Direction set for Q4; the pricing decisions laid out for Mission Control."},
+    {"d": "Oct 2", "t": "HubSpot stage definitions and mapping v2", "s": "The deal pipeline spec: stages, lifecycle rules and the migration map."},
+    {"d": "Oct 1", "t": "Product PAS sheets (Playbook AI, LaunchPAD)", "s": "Each product gets its own positioning sheet."},
+    {"d": "Sept 23", "t": "HubSpot audit and plan", "s": "Full portal review with the pipeline design and AI integration plan.", "u": "https://docs.google.com/document/d/187hjtmdeXhBHxAKugO_6052e7-i6R4ctlPJC_vZ3V90/edit"},
+    {"d": "Sept 23", "t": "Product deep dive", "s": "Playbook AI and LaunchPAD walked end to end; positioning agreed."},
+    {"d": "Sept 18", "t": "PAS Positioning Sheet v1", "s": "The master messaging document everything builds from.", "u": "https://docs.google.com/document/d/1PVA_QWcwgYkWTOCycznKJhlU4GRGToUysnfgqUqfev4/edit"},
+    {"d": "Sept 18", "t": "Partner Program, first cut", "s": "Referral tracks, incentives, and an interactive walkthrough.", "u": "https://docs.google.com/document/d/1iGhK8QgPqPgrfMLiM3fZGy0Weapw280vwibqGewmWso/edit"},
+    {"d": "Sept 18", "t": "Sales documents review", "s": "Five findings across scripts, deck, and process, with a fix order."}
   ],
   "asks": [
-    {
-      "who": "Raf",
-      "what": "Collect review and finalize changes",
-      "why": "Current drafts are prepared; review feedback and final acceptance remain open."
-    },
-    {
-      "who": "MC leadership",
-      "what": "Review and record decisions",
-      "why": "Confirm direction, priorities and any requested changes."
-    },
-    {
-      "who": "Raf + designated owners",
-      "what": "Complete targeted validation",
-      "why": "Chosen-period baseline checks, final HubSpot alignment and the product/offer mapping remain. Current operating owners are recorded."
-    }
+    {"who": "Jason", "what": "Read-only Google Ads access; HubSpot view access; product access once Raf sends the list", "why": "Unblocks #7 (top priority), #6 and #8."},
+    {"who": "Ori", "what": "Nov 16 education scope · Nov 17 forecast, margins, losses, spend, CAC · Nov 20 comp direction and BDR manager", "why": "#1, #2, #3 and #9 are rebuilt from these numbers. #4 handover goes to the person Ori picks."},
+    {"who": "Steve", "what": "One working session on the CS talk tracks", "why": "Builds the four CS situations in #5 with the person who runs them."},
+    {"who": "Jason + Ori", "what": "Sales Buddy: hand over or not", "why": "If yes: working, with access, a short guide, and a named owner and cost after Nov 30."},
+    {"who": "Raf", "what": "Product access list to Jason; call recordings for #4; answer on the education pilot", "why": "Raf's open items, due this week."}
   ],
   "next": [
-    {
-      "t": "Review the mapped working documents",
-      "s": "Current review drafts are linked to the corresponding SOW items. Approved reviewer sign-in is required; the delivered replacement campaign remains held and links to its original plan.",
-      "w": "DOCUMENT MAP"
-    },
-    {
-      "t": "Complete staged November handoffs",
-      "s": "Existing revised dates remain proposed; no new dates or acceptance are implied by this update.",
-      "w": "NOVEMBER"
-    },
-    {
-      "t": "Sales Buddy access and training",
-      "s": "Delivery readiness, access, SOP and training remain open and are tracked separately from the nine SOW document outputs.",
-      "w": "SEPARATE ROLLOUT"
-    }
+    {"t": "Google Ads diagnostic", "s": "Starts the day access lands. Findings and prioritized fixes within three business days.", "w": "1 · NOW"},
+    {"t": "HubSpot findings and sequence copy review", "s": "Findings only, against Jason's Setup Reference and the PAS.", "w": "2 · BY NOV 18"},
+    {"t": "Clean seller guide, Mission Buddy how-to, training", "s": "Seller guide ready for training the week of Nov 16; CS tracks with Steve by Nov 20.", "w": "3 · WEEK OF NOV 16"},
+    {"t": "Rebuilds on 40% growth", "s": "North Star, scoreboard baseline, comp and education plan, once Ori's Nov 16 to 20 inputs arrive.", "w": "4 · NOV 17 TO 30"},
+    {"t": "Handover by Nov 30", "s": "Every deliverable lands with its owner at MC. Weekly scoreboard reviews run through the end date.", "w": "5 · NOV 30"}
   ]
 };
 
@@ -593,9 +377,9 @@ const ST = {ok:"SHIPPED", build:"IN BUILD", review:"DELIVERED / REVIEW PENDING",
 const allItems = DATA.phases.flatMap(p => p.items);
 const counts = allItems.reduce((m,i)=>(m[i.s]=(m[i.s]||0)+1,m),{});
 document.getElementById("tiles").innerHTML = `
-  <div class="tile verdict"><div class="k">Status</div><div class="v" style="font-size:16px">REVIEW AND HANDOFF</div></div>
-  <div class="tile"><div class="k">Revised dates</div><div class="v" style="font-size:16px">PROPOSED</div></div>
-  <div class="tile"><div class="k">Acceptance</div><div class="v" style="font-size:16px">NOT IMPLIED</div></div>
+  <div class="tile verdict"><div class="k">Status</div><div class="v" style="font-size:16px">REWORK IN PROGRESS</div></div>
+  <div class="tile"><div class="k">Top priority</div><div class="v" style="font-size:16px">ADS DIAGNOSTIC</div></div>
+  <div class="tile"><div class="k">Ends</div><div class="v" style="font-size:16px">NOV 30 + HANDOVER</div></div>
   <div class="tile"><div class="k">Updated</div><div class="v" style="font-size:15px;padding-top:4px">${DATA.updated}</div></div>`;
 
 /* timeline */
@@ -630,7 +414,7 @@ if (firstTrack){
 }
 
 
-function renderDocs(docs){ return '<ul class="doc-list">' + (docs || []).map(d => '<li>' + (d.u ? '<a href="' + esc(d.u) + '" target="_blank" rel="noopener">' + esc(d.t) + ' ↗</a>' : '<span>' + esc(d.t) + '</span>') + '<small>' + esc(d.state) + '</small></li>').join('') + '</ul>'; }
+function renderDocs(docs){ if(!docs || !docs.length) return '<ul class="doc-list"><li><span>New version in progress</span><small>Linked here when delivered</small></li></ul>'; return '<ul class="doc-list">' + (docs || []).map(d => '<li>' + (d.u ? '<a href="' + esc(d.u) + '" target="_blank" rel="noopener">' + esc(d.t) + ' ↗</a>' : '<span>' + esc(d.t) + '</span>') + '<small>' + esc(d.state) + '</small></li>').join('') + '</ul>'; }
 document.getElementById('documentMap').innerHTML = allItems.map(it => '<div class="doc-row"><h3>' + esc(it.n) + '</h3><div>' + renderDocs(it.docs) + '</div></div>').join('');
 
 /* support sections */
@@ -664,7 +448,7 @@ function openItem(id){
     <p>${esc(it.note)}</p>
     ${it.docs ? `<div class="steps-k">Working documents and references</div>${renderDocs(it.docs)}` : ""}
     ${it.steps ? `<div class="steps-k">Checklist · ${it.steps.filter(s=>s.d).length} of ${it.steps.length} done</div><ul class="steps">${it.steps.map(s => `<li class="${s.d?"done":"todo"}"><span class="ck">${s.d?"✓":"○"}</span><span>${s.u?`<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(s.t)} ↗</a>`:esc(s.t)}</span></li>`).join("")}</ul>` : ""}
-    ${it.need ? `<div class="needbox"><div class="k">To move faster, we need</div><div>${esc(it.need)}</div></div>` : ""}`);
+    ${it.need ? `<div class="needbox"><div class="k">Waiting on</div><div>${esc(it.need)}</div></div>` : ""}`);
 }
 box.addEventListener("click", e => { const r = e.target.closest(".trow"); if (r) openItem(r.dataset.id); });
 box.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " "){ const r = e.target.closest(".trow"); if (r){ e.preventDefault(); openItem(r.dataset.id); } } });
@@ -675,11 +459,11 @@ document.getElementById("catchupBtn").addEventListener("click", () => {
   showModal(`
     <div class="eyebrow">Flight briefing · ${esc(DATA.updated)}</div>
     <h3>Where things stand</h3>
-    <p class="sum-line">Current drafts are linked for MC review. <b>Review access, final delivery and acceptance are separate steps.</b></p>
-    <p class="sum-line">Previously delivered PAS, Mission Buddy, HubSpot and campaign components remain credited. Those supporting items are not a count of completed SOW deliverables.</p>
-    <p class="sum-line">The KHDaaS helpdesk campaign replaced the anniversary campaign and was delivered. Final acceptance remains unconfirmed; execution is held.</p>
-    <p class="sum-line">MC review now focuses on the recommendations and specific source, system and product dependencies. Existing revised dates remain proposed.</p>
-    <p class="sum-line">Sales Buddy delivery readiness, access, SOP and training remain open as a separate rollout. The board links to restricted review copies without publishing their contents.</p>
+    <p class="sum-line">Jason reviewed all nine deliverables on Nov 12. <b>None is accepted yet.</b> This board tracks the rework against his feedback.</p>
+    <p class="sum-line"><b>Top priority:</b> the Google Ads diagnostic (Helpdesk Campaign and Performance Max), starting as soon as read-only access is granted.</p>
+    <p class="sum-line">Next: HubSpot findings and sequence copy review, then the clean seller guide and training the week of Nov 16, with CS talk tracks built with Steve.</p>
+    <p class="sum-line">North Star, scoreboard, comp and the education plan are rebuilt on 40% growth once Ori's Nov 16 to 20 inputs arrive.</p>
+    <p class="sum-line">The engagement ends Nov 30. Each deliverable lands with a named owner at MC.</p>
     <ul class="log">${DATA.shipped.slice(0,3).map(u => `<li><span class="d">${esc(u.d)}</span><span class="t"><b>${esc(u.t)}</b><small>${esc(u.s)}</small></span></li>`).join("")}</ul>`);
 });
 </script>
