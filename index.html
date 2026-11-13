@@ -182,13 +182,13 @@ const DATA = {
           "n": "7 · Google Ads diagnostic (top priority)",
           "s": "build",
           "a": "2026-11-13",
-          "b": "2026-11-19",
-          "due": "Proposed Nov 19 · 3 business days after access",
+          "b": "2026-11-18",
+          "due": "Under review · findings proposed Nov 18",
           "note": "Top priority because the ads cost money every day. Diagnose the Helpdesk Campaign and Performance Max: keywords, ad copy, landing page, conversion tracking and HubSpot follow-up, with fixes in priority order. No fee change. The KHDaaS helpdesk campaign is closed, not pending.",
-          "need": "Jason: grant read-only Google Ads access (steps sent Nov 13). Jesse: current tracking setup.",
+          "need": "Jesse: walk-through of the current conversion tracking setup if questions come up during the review.",
           "steps": [
             {"t": "Read-only access steps sent to Jason", "d": 1},
-            {"t": "Access granted", "d": 0},
+            {"t": "Read-only access granted", "d": 1},
             {"t": "Account, landing page and tracking review", "d": 0},
             {"t": "Findings and prioritized fixes delivered", "d": 0}
           ],
@@ -200,11 +200,11 @@ const DATA = {
           "id": "hub",
           "n": "6 · HubSpot findings review and sequence copy review",
           "s": "build",
-          "a": "2026-11-13",
-          "b": "2026-11-18",
-          "due": "Proposed Nov 18",
+          "a": "2026-11-16",
+          "b": "2026-11-19",
+          "due": "Starts Mon Nov 16 · findings proposed Nov 19",
           "note": "Findings only: review Jason's HubSpot build against his Setup Reference, then review the sequence and drip copy against the PAS. Readiness categories replace a scoring model. Jason owns and runs HubSpot; no build work by Lobo.",
-          "need": "Jason: confirm HubSpot view access for the review.",
+          "need": "Jason: go-ahead to start Monday, Nov 16, and HubSpot view access.",
           "steps": [
             {"t": "Setup Reference received from Jason (Slack)", "d": 1},
             {"t": "Build reviewed against the Setup Reference", "d": 0},
@@ -222,8 +222,8 @@ const DATA = {
           "a": "2026-11-10",
           "b": "2026-11-20",
           "due": "Seller guide Nov 16 · CS tracks proposed Nov 20",
-          "note": "Clean, short seller version for the November training: no footnotes, source notes or review labels. CS talk tracks for four situations (value check-ins, champion leaves, usage or needs change, at-risk saves on value, not discounts), built with Steve. One-page Mission Buddy how-to. Works without Sales Buddy. The current Company Reference governs.",
-          "need": "Steve: one working session on the CS talk tracks. Jason and Ori: decide whether Sales Buddy is handed over; if yes, owner and cost after Nov 30.",
+          "note": "Clean, short seller version for the November training: no footnotes, source notes or review labels. CS talk tracks for four situations (value check-ins, champion leaves, usage or needs change, at-risk saves on value, not discounts), built with Steve. One-page Mission Buddy how-to. Everything runs on Mission Buddy, already set up in MC's Claude and built on MC's positioning; Sales Buddy is not required for now. The current Company Reference governs.",
+          "need": "Steve: one working session on the CS talk tracks.",
           "steps": [
             {"t": "PAS foundation and Mission Buddy delivered", "d": 1},
             {"t": "Clean seller version for training", "d": 0},
@@ -341,7 +341,7 @@ const DATA = {
     }
   ],
   "shipped": [
-    {"d": "Nov 13", "t": "Google Ads read-only access steps", "s": "Sent to Jason so the ads diagnostic can start."},
+    {"d": "Nov 13", "t": "Google Ads access in place", "s": "Read-only access granted; the ads diagnostic is under way."},
     {"d": "Nov 12", "t": "Jason's feedback on all nine deliverables", "s": "Received. None accepted yet; this board now tracks the rework against it."},
     {"d": "Oct 27", "t": "Help desk campaign plan and creative", "s": "Plan, copy, ads in six sizes, comic and paid media strategy. Campaign closed; the files are yours."},
     {"d": "Oct 16", "t": "Mission Buddy", "s": "Your Claude project and PAS skill for campaigns, posts, sequences and sales prep."},
@@ -355,16 +355,15 @@ const DATA = {
     {"d": "Sept 18", "t": "Sales documents review", "s": "Five findings across scripts, deck, and process, with a fix order."}
   ],
   "asks": [
-    {"who": "Jason", "what": "Read-only Google Ads access; HubSpot view access; product access once Raf sends the list", "why": "Unblocks #7 (top priority), #6 and #8."},
+    {"who": "Jason", "what": "Go-ahead to start the HubSpot review Monday, Nov 16; product access once Raf sends the list", "why": "Unblocks #6 and #8. Google Ads access is in place."},
     {"who": "Ori", "what": "Nov 16 education scope · Nov 17 forecast, margins, losses, spend, CAC · Nov 20 comp direction and BDR manager", "why": "#1, #2, #3 and #9 are rebuilt from these numbers. #4 handover goes to the person Ori picks."},
     {"who": "Steve", "what": "One working session on the CS talk tracks", "why": "Builds the four CS situations in #5 with the person who runs them."},
-    {"who": "Jason + Ori", "what": "Sales Buddy: hand over or not", "why": "If yes: working, with access, a short guide, and a named owner and cost after Nov 30."},
     {"who": "Raf", "what": "Product access list to Jason; call recordings for #4; answer on the education pilot", "why": "Raf's open items, due this week."}
   ],
   "next": [
-    {"t": "Google Ads diagnostic", "s": "Starts the day access lands. Findings and prioritized fixes within three business days.", "w": "1 · NOW"},
-    {"t": "HubSpot findings and sequence copy review", "s": "Findings only, against Jason's Setup Reference and the PAS.", "w": "2 · BY NOV 18"},
-    {"t": "Clean seller guide, Mission Buddy how-to, training", "s": "Seller guide ready for training the week of Nov 16; CS tracks with Steve by Nov 20.", "w": "3 · WEEK OF NOV 16"},
+    {"t": "Google Ads diagnostic", "s": "Access in place and review under way. Findings and prioritized fixes proposed for Nov 18.", "w": "1 · NOW"},
+    {"t": "HubSpot findings and sequence copy review", "s": "Starts Monday, Nov 16, with Jason's go-ahead. Findings only, against his Setup Reference and the PAS.", "w": "2 · NOV 16 TO 19"},
+    {"t": "Clean seller guide, Mission Buddy how-to, training", "s": "Built on Mission Buddy, no Sales Buddy needed. Seller guide ready for training the week of Nov 16; CS tracks with Steve by Nov 20.", "w": "3 · WEEK OF NOV 16"},
     {"t": "Rebuilds on 40% growth", "s": "North Star, scoreboard baseline, comp and education plan, once Ori's Nov 16 to 20 inputs arrive.", "w": "4 · NOV 17 TO 30"},
     {"t": "Handover by Nov 30", "s": "Every deliverable lands with its owner at MC. Weekly scoreboard reviews run through the end date.", "w": "5 · NOV 30"}
   ]
@@ -460,7 +459,7 @@ document.getElementById("catchupBtn").addEventListener("click", () => {
     <div class="eyebrow">Flight briefing · ${esc(DATA.updated)}</div>
     <h3>Where things stand</h3>
     <p class="sum-line">Jason reviewed all nine deliverables on Nov 12. <b>None is accepted yet.</b> This board tracks the rework against his feedback.</p>
-    <p class="sum-line"><b>Top priority:</b> the Google Ads diagnostic (Helpdesk Campaign and Performance Max), starting as soon as read-only access is granted.</p>
+    <p class="sum-line"><b>Top priority:</b> the Google Ads diagnostic (Helpdesk Campaign and Performance Max), now under review with read-only access in place.</p>
     <p class="sum-line">Next: HubSpot findings and sequence copy review, then the clean seller guide and training the week of Nov 16, with CS talk tracks built with Steve.</p>
     <p class="sum-line">North Star, scoreboard, comp and the education plan are rebuilt on 40% growth once Ori's Nov 16 to 20 inputs arrive.</p>
     <p class="sum-line">The engagement ends Nov 30. Each deliverable lands with a named owner at MC.</p>
