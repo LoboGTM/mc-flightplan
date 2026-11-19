@@ -126,7 +126,7 @@ section{margin-top:52px}
       <button class="catchup-btn" id="catchupBtn">CATCH ME UP</button>
     </div>
     <h1>Mission Control Flight Plan</h1>
-    <p class="sub">Engagement status · <b>Lobo GTM × Mission Control</b> · live page, updated as work progresses</p><p class="sub" style="margin-top:10px">Updated November 13 against Jason's November 12 feedback. None of the nine deliverables is accepted yet. This page shows what is being worked on, in priority order, and what each item is waiting on. All dates are proposed. The engagement ends November 30 with a documented handover.</p>
+    <p class="sub">Engagement status · <b>Lobo GTM × Mission Control</b> · live page, updated as work progresses</p><p class="sub" style="margin-top:10px">Updated November 18 against Jason's November 12 feedback. None of the nine deliverables is accepted yet. This page shows what is being worked on, in priority order, and what each item is waiting on. All dates are proposed. The engagement ends November 30 with a documented handover.</p>
     <div class="telemetry" id="tiles"></div>
   </header>
 
@@ -166,34 +166,50 @@ section{margin-top:52px}
 <script>
 const START = new Date("2026-09-01T00:00:00");
 const END = new Date("2026-11-30T00:00:00");
-const TODAY = new Date("2026-11-13T00:00:00");
+const TODAY = new Date("2026-11-18T00:00:00");
 const SPAN = END - START;
 const pct = d => Math.min(100, Math.max(0, ((new Date(d + "T00:00:00") - START) / SPAN) * 100));
 
 const DATA = {
-  "updated": "Nov 13",
-  "day": 74,
+  "updated": "Nov 18",
+  "day": 79,
   "phases": [
     {
       "name": "SOW No. 1 · nine deliverables · ends Nov 30 · Jason's Nov 12 feedback applied",
       "items": [
         {
           "id": "anniv",
-          "n": "7 · Google Ads diagnostic (top priority)",
-          "s": "build",
+          "n": "7 · Google Ads diagnostic",
+          "s": "review",
           "a": "2026-11-13",
           "b": "2026-11-18",
-          "due": "Under review · findings proposed Nov 18",
-          "note": "Top priority because the ads cost money every day. Diagnose the Helpdesk Campaign and Performance Max: keywords, ad copy, landing page, conversion tracking and HubSpot follow-up, with fixes in priority order. No fee change. The KHDaaS helpdesk campaign is closed, not pending.",
-          "need": "Jesse: walk-through of the current conversion tracking setup if questions come up during the review.",
+          "due": "Findings and fixes sent Nov 18",
+          "note": "Read-only review complete. Most spend is still going to Display, not Search; conversion tracking is incomplete; keywords and the live ad still position MC as software. Eight fixes in priority order, with owners and dates. Written for MC's team to carry out, with a Mission Buddy prompt for the ad and keyword rewrite.",
+          "need": "Jason: turn off Display on the Helpdesk Campaign, complete Google advertiser verification, and say whether MC wants Raf to draft the keywords and copy or use the Mission Buddy prompt.",
           "steps": [
-            {"t": "Read-only access steps sent to Jason", "d": 1},
-            {"t": "Read-only access granted", "d": 1},
-            {"t": "Account, landing page and tracking review", "d": 0},
-            {"t": "Findings and prioritized fixes delivered", "d": 0}
+            {
+              "t": "Read-only access granted",
+              "d": 1
+            },
+            {
+              "t": "Account, keyword, ad and tracking review",
+              "d": 1
+            },
+            {
+              "t": "Findings and prioritized fixes sent",
+              "d": 1
+            },
+            {
+              "t": "Display turned off and verification complete",
+              "d": 0
+            }
           ],
           "docs": [
-            {"t": "KHDaaS helpdesk campaign · Still Here", "u": "https://mc-khdaas-eol-campaign.netlify.app/", "state": "Closed · October 27 plan kept for reference only"}
+            {
+              "t": "Google Ads Diagnostic: Findings and Fixes",
+              "u": "https://docs.google.com/document/d/1J-wy5w9yaPHpDKj8_4BZ1T-45GNWzKqqzF0C9ZvD0Ag/edit",
+              "state": "Sent Nov 18 · for Jason's review"
+            }
           ]
         },
         {
@@ -202,17 +218,33 @@ const DATA = {
           "s": "build",
           "a": "2026-11-16",
           "b": "2026-11-19",
-          "due": "Starts Mon Nov 16 · findings proposed Nov 19",
-          "note": "Findings only: review Jason's HubSpot build against his Setup Reference, then review the sequence and drip copy against the PAS. Readiness categories replace a scoring model. Jason owns and runs HubSpot; no build work by Lobo.",
-          "need": "Jason: go-ahead to start Monday, Nov 16, and HubSpot view access.",
+          "due": "Findings due Nov 19",
+          "note": "Findings only: Jason's HubSpot build checked against his Setup Reference, plus the sequence and drip copy checked against the PAS. Readiness categories replace a scoring model. Jason owns and runs HubSpot.",
+          "need": "Nothing new. Setup Reference received.",
           "steps": [
-            {"t": "Setup Reference received from Jason (Slack)", "d": 1},
-            {"t": "Build reviewed against the Setup Reference", "d": 0},
-            {"t": "Sequence and drip copy reviewed against the PAS", "d": 0},
-            {"t": "Findings delivered to Jason", "d": 0}
+            {
+              "t": "Setup Reference received from Jason (Slack)",
+              "d": 1
+            },
+            {
+              "t": "Build reviewed against the Setup Reference",
+              "d": 0
+            },
+            {
+              "t": "Sequence and drip copy reviewed against the PAS",
+              "d": 0
+            },
+            {
+              "t": "Findings delivered to Jason",
+              "d": 0
+            }
           ],
           "docs": [
-            {"t": "HubSpot Design and Implementation Plan", "state": "Earlier draft · superseded by findings-only review", "u": "https://docs.google.com/document/d/1jcqK4kiDSrwiIKX-sMu8xwz9z_W_AfTt/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"}
+            {
+              "t": "HubSpot Design and Implementation Plan",
+              "state": "Earlier draft · superseded by findings-only review",
+              "u": "https://docs.google.com/document/d/1jcqK4kiDSrwiIKX-sMu8xwz9z_W_AfTt/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
+            }
           ]
         },
         {
@@ -221,151 +253,342 @@ const DATA = {
           "s": "build",
           "a": "2026-11-10",
           "b": "2026-11-20",
-          "due": "Seller guide Nov 16 · CS tracks proposed Nov 20",
-          "note": "Clean, short seller version for the November training: no footnotes, source notes or review labels. CS talk tracks for four situations (value check-ins, champion leaves, usage or needs change, at-risk saves on value, not discounts), built with Steve. One-page Mission Buddy how-to. Everything runs on Mission Buddy, already set up in MC's Claude and built on MC's positioning; Sales Buddy is not required for now. The current Company Reference governs.",
+          "due": "Guide + how-to built · CS tracks with Steve proposed Nov 20",
+          "note": "Clean seller guide and one-page Mission Buddy how-to are built. Sales Sensai training with Jose: Phase 1 (Nov 9), Phase 2 (Nov 11) and Phase 3 (Nov 17) delivered, with a follow-up session to finish the role-plays. CS talk tracks for four situations, built with Steve. Runs on Mission Buddy; Sales Buddy is not required.",
           "need": "Steve: one working session on the CS talk tracks.",
           "steps": [
-            {"t": "PAS foundation and Mission Buddy delivered", "d": 1},
-            {"t": "Clean seller version for training", "d": 0},
-            {"t": "Mission Buddy one-page how-to", "d": 0},
-            {"t": "CS talk tracks reviewed with Steve", "d": 0},
-            {"t": "Training delivered (week of Nov 16)", "d": 0}
+            {
+              "t": "PAS foundation and Mission Buddy delivered",
+              "d": 1
+            },
+            {
+              "t": "Clean seller guide and Mission Buddy how-to built",
+              "d": 1
+            },
+            {
+              "t": "Sales Sensai Phases 1 to 3 with Jose",
+              "d": 1
+            },
+            {
+              "t": "Phase 3 role-plays finished",
+              "d": 0
+            },
+            {
+              "t": "CS talk tracks reviewed with Steve",
+              "d": 0
+            }
           ],
           "docs": [
-            {"t": "Existing PAS foundation", "u": "https://docs.google.com/document/d/1PVA_QWcwgYkWTOCycznKJhlU4GRGToUysnfgqUqfev4/edit", "state": "Supporting reference · team sign-in required"}
+            {
+              "t": "Existing PAS foundation",
+              "u": "https://docs.google.com/document/d/1PVA_QWcwgYkWTOCycznKJhlU4GRGToUysnfgqUqfev4/edit",
+              "state": "Supporting reference · team sign-in required"
+            }
           ]
         },
         {
           "id": "team",
-          "n": "4 · Sales assessment and BDR manager handover",
+          "n": "4 · Sales assessment and enablement plan",
           "s": "build",
           "a": "2026-11-13",
           "b": "2026-11-24",
-          "due": "Memo proposed Nov 20 · handover Nov 24",
-          "note": "Private memo to Jason, Ori and Irit only, based on recorded calls. Ori picks the BDR manager; the coaching routine and hiring steps become a handover for that person. Shared materials carry no personal assessment content.",
-          "need": "Ori: BDR manager choice by Nov 20.",
+          "due": "Private memo Nov 20 · handover to Ori and Jason Nov 24",
+          "note": "Private memo to Jason, Ori and Irit, based on recorded calls. Covers a post-call routine that puts call notes into HubSpot (visibility), and how the Sales Sensai training and Mission Buddy carry discovery to Daniel and future hires. No dedicated BDR manager for now, so the handover goes to Ori and Jason.",
+          "need": "Nothing. Call recordings received.",
           "steps": [
-            {"t": "Call recordings collected", "d": 0},
-            {"t": "Private memo delivered to leadership", "d": 0},
-            {"t": "Shared materials checked and confirmed clean in writing", "d": 0},
-            {"t": "Coaching routine and hiring steps handed to BDR manager", "d": 0}
+            {
+              "t": "Call recordings collected and reviewed",
+              "d": 1
+            },
+            {
+              "t": "Private memo delivered to leadership",
+              "d": 0
+            },
+            {
+              "t": "Post-call routine walkthrough with the sales team",
+              "d": 0
+            },
+            {
+              "t": "Handover to Ori and Jason",
+              "d": 0
+            }
           ]
         },
         {
           "id": "ns",
           "n": "1 · North Star rebuilt on 40% growth",
-          "s": "need",
-          "a": "2026-11-17",
+          "s": "build",
+          "a": "2026-11-18",
           "b": "2026-11-20",
-          "due": "Proposed Nov 20 · after Ori's Nov 17 forecast",
+          "due": "Proposed Nov 20",
           "note": "Rebuild on 40% growth for 2027 from Ori's forecast for 2026. ICP: established, growth-minded MSPs of all sizes; solo operators are not a target, but good inbound fits are welcome. One-page three-year picture. Rollout start stays open.",
-          "need": "Ori: 2026 forecast by Nov 17.",
+          "need": "Ori: one clarification on the 2026 revenue base.",
           "steps": [
-            {"t": "Ori's forecast received", "d": 0},
-            {"t": "One-page North Star on 40% delivered", "d": 0}
+            {
+              "t": "Ori's forecast and figures received",
+              "d": 1
+            },
+            {
+              "t": "One-page North Star on 40% delivered",
+              "d": 0
+            }
           ],
           "docs": [
-            {"t": "North Star review", "state": "Earlier draft · not accepted · being rebuilt", "u": "https://docs.google.com/document/d/1JDdHcZ9TqkUUTqWSkgyX8Kt5NEVZFC1z/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"}
+            {
+              "t": "North Star review",
+              "state": "Earlier draft · not accepted · being rebuilt",
+              "u": "https://docs.google.com/document/d/1JDdHcZ9TqkUUTqWSkgyX8Kt5NEVZFC1z/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
+            }
           ]
         },
         {
           "id": "kpi",
           "n": "2 · Scoreboard on Jason's HubSpot dashboards",
-          "s": "need",
-          "a": "2026-11-17",
+          "s": "build",
+          "a": "2026-11-18",
           "b": "2026-11-30",
           "due": "Baseline proposed Nov 24 · handover Nov 30",
           "note": "Built on Jason's HubSpot dashboards, adding stage-conversion cohorts, win rate and source-to-won. Baseline verified with Ori (finance, churn, CAC). Weekly scoreboard reviews through Nov 30, then a documented handover.",
-          "need": "Ori: margins, losses, spend and CAC inputs by Nov 17.",
+          "need": "Nothing. Ori's figures received Nov 18.",
           "steps": [
-            {"t": "Ori's baseline inputs received", "d": 0},
-            {"t": "Cohort, win-rate and source-to-won views added", "d": 0},
-            {"t": "Weekly scoreboard reviews through Nov 30", "d": 0},
-            {"t": "Documented handover", "d": 0}
+            {
+              "t": "Ori's baseline inputs received",
+              "d": 1
+            },
+            {
+              "t": "Cohort, win-rate and source-to-won views added",
+              "d": 0
+            },
+            {
+              "t": "Weekly scoreboard reviews through Nov 30",
+              "d": 0
+            },
+            {
+              "t": "Documented handover",
+              "d": 0
+            }
           ],
           "docs": [
-            {"t": "HubSpot Dashboard Blueprint", "state": "Earlier draft · not accepted · being rebuilt", "u": "https://docs.google.com/document/d/1-2Qr8ZI_7w5FpiP_95ITJY9mHCP2psCS/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"}
+            {
+              "t": "HubSpot Dashboard Blueprint",
+              "state": "Earlier draft · not accepted · being rebuilt",
+              "u": "https://docs.google.com/document/d/1-2Qr8ZI_7w5FpiP_95ITJY9mHCP2psCS/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
+            }
           ]
         },
         {
           "id": "comp",
-          "n": "3 · Comp plan and working calculator",
-          "s": "need",
-          "a": "2026-11-17",
+          "n": "3 · Sales investment: three scenarios",
+          "s": "build",
+          "a": "2026-11-18",
           "b": "2026-11-24",
-          "due": "Proposed Nov 24 · after Ori's Nov 20 direction",
-          "note": "BDR quota and per-opportunity rate; senior seller paid on 12 months of collected contribution; modeled on Ori's margins with a working calculator. Ori decides any comp changes.",
-          "need": "Ori: margins by Nov 17 and comp direction by Nov 20.",
+          "due": "Proposed Nov 24",
+          "note": "Per Ori's request: conservative, moderate and aggressive scenarios, each with the recommended investment, expected results and potential return. Built on current commission terms, Jose as BDR and the option of two junior sales development hires. Ori decides any changes.",
+          "need": "Nothing. Ori's inputs received Nov 18.",
           "steps": [
-            {"t": "Margins and comp direction received", "d": 0},
-            {"t": "Plan and working calculator delivered", "d": 0}
+            {
+              "t": "Margins, comp terms and team plan received",
+              "d": 1
+            },
+            {
+              "t": "Three scenarios with a working calculator delivered",
+              "d": 0
+            }
+          ]
+        },
+        {
+          "id": "edu",
+          "n": "9 · Partner growth campaigns and roadmap on 40%",
+          "s": "build",
+          "a": "2026-11-18",
+          "b": "2026-11-25",
+          "due": "Proposed Nov 25",
+          "note": "Scope confirmed by Ori: Partners already understand HelpDesk and NOC, so the focus is awareness of additional services and growing existing relationships through structured HubSpot campaigns, tied to the CS talk tracks. Includes the answer on the education pilot.",
+          "need": "Nothing. Scope confirmed Nov 18.",
+          "steps": [
+            {
+              "t": "Scope confirmed by Ori",
+              "d": 1
+            },
+            {
+              "t": "Pilot question answered",
+              "d": 0
+            },
+            {
+              "t": "Campaign plan and roadmap delivered",
+              "d": 0
+            }
+          ],
+          "docs": [
+            {
+              "t": "Partner Education Plan and 12 Month Roadmap",
+              "state": "Earlier draft · not accepted · being rebuilt",
+              "u": "https://docs.google.com/document/d/1Wp5pMQJPDojEQOhCPECebrhqgqolOs3e/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
+            }
           ]
         },
         {
           "id": "lo",
           "n": "8 · Software platform GTM (Playbook AI + LaunchPAD)",
-          "s": "build",
+          "s": "need",
           "a": "2026-11-13",
           "b": "2026-11-24",
           "due": "Proposed Nov 24",
           "note": "One plan: Playbook AI as the entry product and LaunchPAD (includes Playbook AI) as the full platform. Packaging, a pricing recommendation against competitors and a 90-day launch plan. Lift Off is the Partner portal and is not sold.",
-          "need": "Raf: send Jason the product access list. Jason: grant product access.",
+          "need": "Jason: product direction and positioning for Playbook AI and LaunchPAD, plus product access.",
           "steps": [
-            {"t": "Product access list sent to Jason", "d": 0},
-            {"t": "Product access granted", "d": 0},
-            {"t": "Packaging, pricing and 90-day plan delivered", "d": 0}
+            {
+              "t": "Product access list sent to Jason",
+              "d": 0
+            },
+            {
+              "t": "Product access granted",
+              "d": 0
+            },
+            {
+              "t": "Packaging, pricing and 90-day plan delivered",
+              "d": 0
+            }
           ],
           "docs": [
-            {"t": "Lift Off Go To Market Plan", "state": "Earlier draft · superseded by the platform plan", "u": "https://docs.google.com/document/d/19tph8v7a9RFhkbyYeuYaUOiIfHbCIJLg/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"}
-          ]
-        },
-        {
-          "id": "edu",
-          "n": "9 · Partner education plan and roadmap on 40%",
-          "s": "need",
-          "a": "2026-11-16",
-          "b": "2026-11-30",
-          "due": "Nov 30 · after Ori's Nov 16 scope",
-          "note": "Rebuild on 40% growth. Delivered through HubSpot and tied to the CS talk tracks. Includes the answer on when and how the education pilot was removed.",
-          "need": "Ori: confirm education scope by Nov 16.",
-          "steps": [
-            {"t": "Scope confirmed by Ori", "d": 0},
-            {"t": "Pilot question answered", "d": 0},
-            {"t": "Plan and roadmap delivered", "d": 0}
-          ],
-          "docs": [
-            {"t": "Partner Education Plan and 12 Month Roadmap", "state": "Earlier draft · not accepted · being rebuilt", "u": "https://docs.google.com/document/d/1Wp5pMQJPDojEQOhCPECebrhqgqolOs3e/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"}
+            {
+              "t": "Lift Off Go To Market Plan",
+              "state": "Earlier draft · superseded by the platform plan",
+              "u": "https://docs.google.com/document/d/19tph8v7a9RFhkbyYeuYaUOiIfHbCIJLg/edit?usp=drivesdk&ouid=115848141759463528521&rtpof=true&sd=true"
+            }
           ]
         }
       ]
     }
   ],
   "shipped": [
-    {"d": "Nov 13", "t": "Google Ads access in place", "s": "Read-only access granted; the ads diagnostic is under way."},
-    {"d": "Nov 12", "t": "Jason's feedback on all nine deliverables", "s": "Received. None accepted yet; this board now tracks the rework against it."},
-    {"d": "Oct 27", "t": "Help desk campaign plan and creative", "s": "Plan, copy, ads in six sizes, comic and paid media strategy. Campaign closed; the files are yours."},
-    {"d": "Oct 16", "t": "Mission Buddy", "s": "Your Claude project and PAS skill for campaigns, posts, sequences and sales prep."},
-    {"d": "Oct 14", "t": "Strategy session and pricing decision kit", "s": "Direction set for Q4; the pricing decisions laid out for Mission Control."},
-    {"d": "Oct 2", "t": "HubSpot stage definitions and mapping v2", "s": "The deal pipeline spec: stages, lifecycle rules and the migration map."},
-    {"d": "Oct 1", "t": "Product PAS sheets (Playbook AI, LaunchPAD)", "s": "Each product gets its own positioning sheet."},
-    {"d": "Sept 23", "t": "HubSpot audit and plan", "s": "Full portal review with the pipeline design and AI integration plan.", "u": "https://docs.google.com/document/d/187hjtmdeXhBHxAKugO_6052e7-i6R4ctlPJC_vZ3V90/edit"},
-    {"d": "Sept 23", "t": "Product deep dive", "s": "Playbook AI and LaunchPAD walked end to end; positioning agreed."},
-    {"d": "Sept 18", "t": "PAS Positioning Sheet v1", "s": "The master messaging document everything builds from.", "u": "https://docs.google.com/document/d/1PVA_QWcwgYkWTOCycznKJhlU4GRGToUysnfgqUqfev4/edit"},
-    {"d": "Sept 18", "t": "Partner Program, first cut", "s": "Referral tracks, incentives, and an interactive walkthrough.", "u": "https://docs.google.com/document/d/1iGhK8QgPqPgrfMLiM3fZGy0Weapw280vwibqGewmWso/edit"},
-    {"d": "Sept 18", "t": "Sales documents review", "s": "Five findings across scripts, deck, and process, with a fix order."}
+    {
+      "d": "Nov 18",
+      "t": "Google Ads findings and fixes",
+      "s": "Read-only review with eight fixes in priority order, owners and dates."
+    },
+    {
+      "d": "Nov 17",
+      "t": "Sales Sensai Phase 3 with Jose",
+      "s": "Presenting, objections, negotiation and the close. Workshop file and worksheet are yours."
+    },
+    {
+      "d": "Nov 9–11",
+      "t": "Sales Sensai Phases 1 and 2 with Jose",
+      "s": "Discovery, PAS, 3M and practice role-plays, recorded."
+    },
+    {
+      "d": "Nov 13",
+      "t": "Google Ads access in place",
+      "s": "Read-only access granted; the ads diagnostic is under way."
+    },
+    {
+      "d": "Nov 12",
+      "t": "Jason's feedback on all nine deliverables",
+      "s": "Received. None accepted yet; this board now tracks the rework against it."
+    },
+    {
+      "d": "Oct 27",
+      "t": "Help desk campaign plan and creative",
+      "s": "Plan, copy, ads in six sizes, comic and paid media strategy. Campaign closed; the files are yours."
+    },
+    {
+      "d": "Oct 16",
+      "t": "Mission Buddy",
+      "s": "Your Claude project and PAS skill for campaigns, posts, sequences and sales prep."
+    },
+    {
+      "d": "Oct 14",
+      "t": "Strategy session and pricing decision kit",
+      "s": "Direction set for Q4; the pricing decisions laid out for Mission Control."
+    },
+    {
+      "d": "Oct 2",
+      "t": "HubSpot stage definitions and mapping v2",
+      "s": "The deal pipeline spec: stages, lifecycle rules and the migration map."
+    },
+    {
+      "d": "Oct 1",
+      "t": "Product PAS sheets (Playbook AI, LaunchPAD)",
+      "s": "Each product gets its own positioning sheet."
+    },
+    {
+      "d": "Sept 23",
+      "t": "HubSpot audit and plan",
+      "s": "Full portal review with the pipeline design and AI integration plan.",
+      "u": "https://docs.google.com/document/d/187hjtmdeXhBHxAKugO_6052e7-i6R4ctlPJC_vZ3V90/edit"
+    },
+    {
+      "d": "Sept 23",
+      "t": "Product deep dive",
+      "s": "Playbook AI and LaunchPAD walked end to end; positioning agreed."
+    },
+    {
+      "d": "Sept 18",
+      "t": "PAS Positioning Sheet v1",
+      "s": "The master messaging document everything builds from.",
+      "u": "https://docs.google.com/document/d/1PVA_QWcwgYkWTOCycznKJhlU4GRGToUysnfgqUqfev4/edit"
+    },
+    {
+      "d": "Sept 18",
+      "t": "Partner Program, first cut",
+      "s": "Referral tracks, incentives, and an interactive walkthrough.",
+      "u": "https://docs.google.com/document/d/1iGhK8QgPqPgrfMLiM3fZGy0Weapw280vwibqGewmWso/edit"
+    },
+    {
+      "d": "Sept 18",
+      "t": "Sales documents review",
+      "s": "Five findings across scripts, deck, and process, with a fix order."
+    }
   ],
   "asks": [
-    {"who": "Jason", "what": "Go-ahead to start the HubSpot review Monday, Nov 16; product access once Raf sends the list", "why": "Unblocks #6 and #8. Google Ads access is in place."},
-    {"who": "Ori", "what": "Nov 16 education scope · Nov 17 forecast, margins, losses, spend, CAC · Nov 20 comp direction and BDR manager", "why": "#1, #2, #3 and #9 are rebuilt from these numbers. #4 handover goes to the person Ori picks."},
-    {"who": "Steve", "what": "One working session on the CS talk tracks", "why": "Builds the four CS situations in #5 with the person who runs them."},
-    {"who": "Raf", "what": "Product access list to Jason; call recordings for #4; answer on the education pilot", "why": "Raf's open items, due this week."}
+    {
+      "who": "Jason",
+      "what": "Turn off Display on the Helpdesk Campaign and complete Google advertiser verification",
+      "why": "Today's ad spend is going to Display, and Google says ads may stop without verification."
+    },
+    {
+      "who": "Jason",
+      "what": "Product direction and access for Playbook AI and LaunchPAD",
+      "why": "Unblocks #8."
+    },
+    {
+      "who": "Ori",
+      "what": "One clarification on the 2026 revenue base",
+      "why": "Locks the starting point for the 40% plan in #1."
+    },
+    {
+      "who": "Steve",
+      "what": "One working session on the CS talk tracks",
+      "why": "Builds the four CS situations in #5 with the person who runs them."
+    }
   ],
   "next": [
-    {"t": "Google Ads diagnostic", "s": "Access in place and review under way. Findings and prioritized fixes proposed for Nov 18.", "w": "1 · NOW"},
-    {"t": "HubSpot findings and sequence copy review", "s": "Starts Monday, Nov 16, with Jason's go-ahead. Findings only, against his Setup Reference and the PAS.", "w": "2 · NOV 16 TO 19"},
-    {"t": "Clean seller guide, Mission Buddy how-to, training", "s": "Built on Mission Buddy, no Sales Buddy needed. Seller guide ready for training the week of Nov 16; CS tracks with Steve by Nov 20.", "w": "3 · WEEK OF NOV 16"},
-    {"t": "Rebuilds on 40% growth", "s": "North Star, scoreboard baseline, comp and education plan, once Ori's Nov 16 to 20 inputs arrive.", "w": "4 · NOV 17 TO 30"},
-    {"t": "Handover by Nov 30", "s": "Every deliverable lands with its owner at MC. Weekly scoreboard reviews run through the end date.", "w": "5 · NOV 30"}
+    {
+      "t": "HubSpot findings and sequence copy review",
+      "s": "Findings only, against Jason's Setup Reference and the PAS.",
+      "w": "1 · NOV 19"
+    },
+    {
+      "t": "North Star on 40% and the private sales memo",
+      "s": "Both built on Ori's Nov 18 figures and the recorded calls.",
+      "w": "2 · NOV 20"
+    },
+    {
+      "t": "Scoreboard baseline and three sales investment scenarios",
+      "s": "Conservative, moderate and aggressive, with a working calculator.",
+      "w": "3 · NOV 24"
+    },
+    {
+      "t": "Partner growth campaigns and roadmap",
+      "s": "HubSpot campaigns for additional services, tied to the CS talk tracks.",
+      "w": "4 · NOV 25"
+    },
+    {
+      "t": "Handover by Nov 30",
+      "s": "Every deliverable lands with its owner at MC. Thanksgiving Nov 26 is a buffer, not a work day.",
+      "w": "5 · NOV 27–30"
+    }
   ]
 };
 
@@ -377,7 +600,7 @@ const allItems = DATA.phases.flatMap(p => p.items);
 const counts = allItems.reduce((m,i)=>(m[i.s]=(m[i.s]||0)+1,m),{});
 document.getElementById("tiles").innerHTML = `
   <div class="tile verdict"><div class="k">Status</div><div class="v" style="font-size:16px">REWORK IN PROGRESS</div></div>
-  <div class="tile"><div class="k">Top priority</div><div class="v" style="font-size:16px">ADS DIAGNOSTIC</div></div>
+  <div class="tile"><div class="k">Due next</div><div class="v" style="font-size:16px">HUBSPOT REVIEW</div></div>
   <div class="tile"><div class="k">Ends</div><div class="v" style="font-size:16px">NOV 30 + HANDOVER</div></div>
   <div class="tile"><div class="k">Updated</div><div class="v" style="font-size:15px;padding-top:4px">${DATA.updated}</div></div>`;
 
@@ -459,9 +682,9 @@ document.getElementById("catchupBtn").addEventListener("click", () => {
     <div class="eyebrow">Flight briefing · ${esc(DATA.updated)}</div>
     <h3>Where things stand</h3>
     <p class="sum-line">Jason reviewed all nine deliverables on Nov 12. <b>None is accepted yet.</b> This board tracks the rework against his feedback.</p>
-    <p class="sum-line"><b>Top priority:</b> the Google Ads diagnostic (Helpdesk Campaign and Performance Max), now under review with read-only access in place.</p>
-    <p class="sum-line">Next: HubSpot findings and sequence copy review, then the clean seller guide and training the week of Nov 16, with CS talk tracks built with Steve.</p>
-    <p class="sum-line">North Star, scoreboard, comp and the education plan are rebuilt on 40% growth once Ori's Nov 16 to 20 inputs arrive.</p>
+    <p class="sum-line"><b>Delivered Nov 18:</b> Google Ads findings with eight fixes in priority order. The most urgent: turn off Display on the Helpdesk Campaign.</p>
+    <p class="sum-line">Next: HubSpot findings (Nov 19), then the North Star and the private sales memo (Nov 20). Sales Sensai Phases 1 to 3 delivered with Jose.</p>
+    <p class="sum-line">Ori's figures arrived Nov 18, so the North Star, scoreboard, three sales investment scenarios and partner growth campaigns are now in build.</p>
     <p class="sum-line">The engagement ends Nov 30. Each deliverable lands with a named owner at MC.</p>
     <ul class="log">${DATA.shipped.slice(0,3).map(u => `<li><span class="d">${esc(u.d)}</span><span class="t"><b>${esc(u.t)}</b><small>${esc(u.s)}</small></span></li>`).join("")}</ul>`);
 });
