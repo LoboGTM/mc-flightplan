@@ -166,13 +166,13 @@ section{margin-top:52px}
 <script>
 const START = new Date("2026-09-01T00:00:00");
 const END = new Date("2026-11-30T00:00:00");
-const TODAY = new Date("2026-11-19T00:00:00");
+const TODAY = new Date("2026-11-20T00:00:00");
 const SPAN = END - START;
 const pct = d => Math.min(100, Math.max(0, ((new Date(d + "T00:00:00") - START) / SPAN) * 100));
 
 const DATA = {
-  "updated": "Nov 19",
-  "day": 80,
+  "updated": "Nov 20",
+  "day": 81,
   "phases": [
     {
       "name": "SOW No. 1 · nine deliverables · ends Nov 30 · Jason's Nov 12 feedback applied",
@@ -215,12 +215,12 @@ const DATA = {
         {
           "id": "hub",
           "n": "6 · HubSpot findings review and sequence copy review",
-          "s": "review",
+          "s": "ok",
           "a": "2026-11-16",
           "b": "2026-11-19",
-          "due": "Findings sent Nov 19",
+          "due": "Sent Nov 19 · Jason replied Nov 20",
           "note": "Findings only: Jason's HubSpot build checked against his Setup Reference, plus the sequence and drip copy checked against the PAS. Readiness categories replace a scoring model. Jason owns and runs HubSpot.",
-          "need": "Jason: verify-first items in section 10 (ad lead source, tracking warning, reply check, Jack's inbox owner).",
+          "need": "Nothing. Jason's team is applying the fixes (lead-source rule changed, rewrites underway).",
           "steps": [
             {
               "t": "Setup Reference received from Jason (Slack)",
@@ -243,7 +243,7 @@ const DATA = {
             {
               "t": "HubSpot Review: Findings, Fixes and Copy",
               "u": "https://docs.google.com/document/d/1qT2gA_ruwhjQeilkVIRDEluv8AFWUxH2olvhnHMhqTE/edit",
-              "state": "Sent Nov 19 · for Jason's review"
+              "state": "Sent Nov 19 · Jason replied Nov 20"
             },
             {
               "t": "HubSpot Design and Implementation Plan",
@@ -258,9 +258,9 @@ const DATA = {
           "s": "build",
           "a": "2026-11-10",
           "b": "2026-11-20",
-          "due": "Guide + how-to built · CS tracks with Steve proposed Nov 20",
-          "note": "Clean seller guide and one-page Mission Buddy how-to are built. Sales Sensai training with Jose: Phase 1 (Nov 9), Phase 2 (Nov 11) and Phase 3 (Nov 17) delivered, with a follow-up session to finish the role-plays. CS talk tracks for four situations, built with Steve. Runs on Mission Buddy; Sales Buddy is not required.",
-          "need": "Steve: one working session on the CS talk tracks.",
+          "due": "Coaching Nov 20 · deck run-through next week",
+          "note": "Clean seller guide and one-page Mission Buddy how-to are built. Sales Sensai training with Jose: Phase 1 (Nov 9), Phase 2 (Nov 11) and Phase 3 (Nov 17) delivered, plus a coaching session on Nov 20. One more session next week for the deck run-through. CS talk tracks for four situations, built with Steve. Runs on Mission Buddy; Sales Buddy is not required.",
+          "need": "Nothing. Steve working session held Nov 20.",
           "steps": [
             {
               "t": "PAS foundation and Mission Buddy delivered",
@@ -279,7 +279,7 @@ const DATA = {
               "d": 0
             },
             {
-              "t": "CS talk tracks reviewed with Steve",
+              "t": "CS working session with Steve (Nov 20); talk tracks to follow",
               "d": 0
             }
           ],
@@ -297,8 +297,8 @@ const DATA = {
           "s": "build",
           "a": "2026-11-13",
           "b": "2026-11-24",
-          "due": "Private memo Nov 20 · handover to Ori and Jason Nov 24",
-          "note": "Private memo to Jason, Ori and Irit, based on recorded calls. Covers a post-call routine that puts call notes into HubSpot (visibility), and how the Sales Sensai training and Mission Buddy carry discovery to Daniel and future hires. No dedicated BDR manager for now, so the handover goes to Ori and Jason.",
+          "due": "Private memo Nov 20 · handover after Jose's final session",
+          "note": "Private memo to Jason, Ori and Irit, based on recorded calls. Covers a post-call routine that puts call notes into HubSpot (visibility), and how the Sales Sensai training and Mission Buddy carry discovery to Daniel and future hires. No dedicated BDR manager for now, so the handover goes to Ori and Jason. Now also covers a one-page handoff from sales to Client Success, built with Steve and Jose.",
           "need": "Nothing. Call recordings received.",
           "steps": [
             {
@@ -438,9 +438,9 @@ const DATA = {
           "s": "need",
           "a": "2026-11-13",
           "b": "2026-11-27",
-          "due": "Product call Nov 24 or 25 · plan by Nov 27",
+          "due": "Product call Tue Nov 24 · plan by Nov 27",
           "note": "One plan: Playbook AI as the entry product and LaunchPAD (includes Playbook AI) as the full platform. Packaging, a pricing recommendation against competitors and a 90-day launch plan. Lift Off is the Partner portal and is not sold.",
-          "need": "Jason: product walkthrough call (Tue Nov 24 or Wed Nov 25) and product access ahead of the call.",
+          "need": "Jason: confirm Tue Nov 24 at 4:30pm EST, and product access before the call.",
           "steps": [
             {
               "t": "Product access list sent to Jason",
@@ -467,6 +467,11 @@ const DATA = {
     }
   ],
   "shipped": [
+    {
+      "d": "Nov 20",
+      "t": "Sales coaching with Jose and CS session with Steve",
+      "s": "Jose's discovery role-play and debrief; Steve's view of onboarding, churn and the sales handoff."
+    },
     {
       "d": "Nov 19",
       "t": "HubSpot findings, fixes and copy",
@@ -559,7 +564,7 @@ const DATA = {
     },
     {
       "who": "Jason",
-      "what": "Confirm the product walkthrough (Tue Nov 24 or Wed Nov 25) and share product access before the call",
+      "what": "Confirm the product call for Tue Nov 24 at 4:30pm EST, and share product access before it",
       "why": "Covers LaunchPAD, Playbook AI and MSP Box Office. Unblocks #8."
     },
     {
@@ -568,30 +573,30 @@ const DATA = {
       "why": "Locks the starting point for the 40% plan in #1."
     },
     {
-      "who": "Steve",
-      "what": "One working session on the CS talk tracks",
-      "why": "Builds the four CS situations in #5 with the person who runs them."
+      "who": "Ori, Irit and Raf",
+      "what": "Decide whether MC sales will track deal amounts",
+      "why": "Jason asked for this discussion. Until then, the scoreboard and scenarios use Ori's figures for revenue."
     }
   ],
   "next": [
     {
-      "t": "HubSpot findings and sequence copy review",
-      "s": "Findings only, against Jason's Setup Reference and the PAS.",
-      "w": "1 · NOV 19"
-    },
-    {
       "t": "North Star on 40% and the private sales memo",
-      "s": "Both built on Ori's Nov 18 figures and the recorded calls.",
-      "w": "2 · NOV 20"
+      "s": "Built on Ori's Nov 18 figures, the recorded calls and this week's sessions.",
+      "w": "1 · NOV 20"
     },
     {
       "t": "Scoreboard baseline and three sales investment scenarios",
-      "s": "Conservative, moderate and aggressive, with a working calculator.",
-      "w": "3 · NOV 24"
+      "s": "Revenue from Ori's figures, activity from HubSpot. Working calculator.",
+      "w": "2 · NOV 24"
+    },
+    {
+      "t": "Product call with Jason, then the software GTM plan",
+      "s": "LaunchPAD, Playbook AI and MSP Box Office.",
+      "w": "3 · NOV 24–27"
     },
     {
       "t": "Partner growth campaigns and roadmap",
-      "s": "HubSpot campaigns for additional services, tied to the CS talk tracks.",
+      "s": "Additional-services campaigns plus retention plays from the Steve session.",
       "w": "4 · NOV 25"
     },
     {
