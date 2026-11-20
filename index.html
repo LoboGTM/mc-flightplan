@@ -166,13 +166,13 @@ section{margin-top:52px}
 <script>
 const START = new Date("2026-09-01T00:00:00");
 const END = new Date("2026-11-30T00:00:00");
-const TODAY = new Date("2026-11-18T00:00:00");
+const TODAY = new Date("2026-11-19T00:00:00");
 const SPAN = END - START;
 const pct = d => Math.min(100, Math.max(0, ((new Date(d + "T00:00:00") - START) / SPAN) * 100));
 
 const DATA = {
-  "updated": "Nov 18",
-  "day": 79,
+  "updated": "Nov 19",
+  "day": 80,
   "phases": [
     {
       "name": "SOW No. 1 · nine deliverables · ends Nov 30 · Jason's Nov 12 feedback applied",
@@ -215,12 +215,12 @@ const DATA = {
         {
           "id": "hub",
           "n": "6 · HubSpot findings review and sequence copy review",
-          "s": "build",
+          "s": "review",
           "a": "2026-11-16",
           "b": "2026-11-19",
-          "due": "Findings due Nov 19",
+          "due": "Findings sent Nov 19",
           "note": "Findings only: Jason's HubSpot build checked against his Setup Reference, plus the sequence and drip copy checked against the PAS. Readiness categories replace a scoring model. Jason owns and runs HubSpot.",
-          "need": "Nothing new. Setup Reference received.",
+          "need": "Jason: verify-first items in section 10 (ad lead source, tracking warning, reply check, Jack's inbox owner).",
           "steps": [
             {
               "t": "Setup Reference received from Jason (Slack)",
@@ -228,18 +228,23 @@ const DATA = {
             },
             {
               "t": "Build reviewed against the Setup Reference",
-              "d": 0
+              "d": 1
             },
             {
               "t": "Sequence and drip copy reviewed against the PAS",
-              "d": 0
+              "d": 1
             },
             {
               "t": "Findings delivered to Jason",
-              "d": 0
+              "d": 1
             }
           ],
           "docs": [
+            {
+              "t": "HubSpot Review: Findings, Fixes and Copy",
+              "u": "https://docs.google.com/document/d/1qT2gA_ruwhjQeilkVIRDEluv8AFWUxH2olvhnHMhqTE/edit",
+              "state": "Sent Nov 19 · for Jason's review"
+            },
             {
               "t": "HubSpot Design and Implementation Plan",
               "state": "Earlier draft · superseded by findings-only review",
@@ -463,6 +468,11 @@ const DATA = {
   ],
   "shipped": [
     {
+      "d": "Nov 19",
+      "t": "HubSpot findings, fixes and copy",
+      "s": "Read-only review: two verification walkthroughs, keep/rewrite/hold for every sequence and email, draft copy, and an implementation guide with IDs and tests."
+    },
+    {
       "d": "Nov 18",
       "t": "Google Ads findings and fixes",
       "s": "Read-only review with eight fixes in priority order, owners and dates."
@@ -600,7 +610,7 @@ const allItems = DATA.phases.flatMap(p => p.items);
 const counts = allItems.reduce((m,i)=>(m[i.s]=(m[i.s]||0)+1,m),{});
 document.getElementById("tiles").innerHTML = `
   <div class="tile verdict"><div class="k">Status</div><div class="v" style="font-size:16px">REWORK IN PROGRESS</div></div>
-  <div class="tile"><div class="k">Due next</div><div class="v" style="font-size:16px">HUBSPOT REVIEW</div></div>
+  <div class="tile"><div class="k">Due next</div><div class="v" style="font-size:16px">NORTH STAR · NOV 20</div></div>
   <div class="tile"><div class="k">Ends</div><div class="v" style="font-size:16px">NOV 30 + HANDOVER</div></div>
   <div class="tile"><div class="k">Updated</div><div class="v" style="font-size:15px;padding-top:4px">${DATA.updated}</div></div>`;
 
